@@ -1,16 +1,16 @@
 
 const initialState = {
-    usersData: [],
+    travelersData: [],
     loading: true,
     errMsg: ""
 }
 
 this.state = this.initialState;
 
-const usersReducer = (state = initialState, action) => {
+const travelersReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state
     }
 }
-export default usersReducer
+export default travelersReducer

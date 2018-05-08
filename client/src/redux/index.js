@@ -1,9 +1,9 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 
-import usersReducer from "./usersRedux";
+import travelersReducer from "./travelersRedux";
 
-const store = createStore(combineReducers({users: usersReducer}), applyMiddleware(thunk));
+const store = createStore(combineReducers({travelers: travelersReducer}), applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 
