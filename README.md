@@ -2,10 +2,26 @@
 by, Danielle Walker, Lelana 'Heaven' Villa and Tirzah Evengelista
 
 ## Description
-The Group Tour App is a place where friends can collaberate to plan out their activities for a group vacation. They will be able to share attractions and activities and then vote and comment on them. This interactive app helps groups of friends or family decide what to do once they get to where they are going.
+The Group Tour App is a place where friends/family can collaborate to plan out their activities for a group vacation. They will be able to share attractions and activities and then vote and comment on them. This interactive app helps groups of friends or family decide what to do once they get to where they are going.
+
+## Wireframes/Mockups
+### Landing Page
+<img width="1213" alt="screen shot 2018-05-09 at 12 07 38 am" src="https://user-images.githubusercontent.com/16514603/39798303-34be4ad6-531d-11e8-9859-56803ec019be.png">
+<img width="1207" alt="screen shot 2018-05-09 at 12 08 10 am" src="https://user-images.githubusercontent.com/16514603/39798305-36befa06-531d-11e8-9ee0-fc4f4e60fdb0.png">
+### Sign In / Log In
+<img width="1211" alt="screen shot 2018-05-09 at 12 08 29 am" src="https://user-images.githubusercontent.com/16514603/39798309-388a324c-531d-11e8-8830-b3ea9696a7dc.png">
+
+## Mind Map
+![screen shot 2018-05-04 at 4 51 06 pm](https://user-images.githubusercontent.com/16514603/39798118-642aa680-531c-11e8-882e-f4116bcca842.png)
+### Mind Map Notes
+![screen shot 2018-05-04 at 4 54 42 pm](https://user-images.githubusercontent.com/16514603/39798167-94ebcd3a-531c-11e8-844e-ca611fa64180.png)
+
+![screen shot 2018-05-04 at 4 54 54 pm](https://user-images.githubusercontent.com/16514603/39798168-97131bb8-531c-11e8-9aeb-47269d0afcdc.png)
+
 
 ## User Stories
- #### Group Creator
+A typical user on our app is generally 20-50 years old and has some experience with social media.
+#### Group Creator
 - As a group creator I can create a travel group and invite members to join so that I can plan a successful trip with my friends/family
 - As a group creator I can login to my travel page and see all of my groups and edit/delete groups as needed
 - As a group creator I can enter in the location, time and all pertinent trip details so that everyone will know the details and we can search accordingly in the database
@@ -27,19 +43,3 @@ The Group Tour App is a place where friends can collaberate to plan out their ac
 - As a group member I can send all group members notifications or comments
 ##### Site Visitors(not yet members)
 - As a site visitor I can get travel itinerary ideas from suggestions
-
-## Wireframes/Mockups
-### Landing Page
-<img width="1213" alt="screen shot 2018-05-09 at 12 07 38 am" src="https://user-images.githubusercontent.com/16514603/39798303-34be4ad6-531d-11e8-9859-56803ec019be.png">
-<img width="1207" alt="screen shot 2018-05-09 at 12 08 10 am" src="https://user-images.githubusercontent.com/16514603/39798305-36befa06-531d-11e8-9ee0-fc4f4e60fdb0.png">
-### Sign In / Log In
-<img width="1211" alt="screen shot 2018-05-09 at 12 08 29 am" src="https://user-images.githubusercontent.com/16514603/39798309-388a324c-531d-11e8-8830-b3ea9696a7dc.png">
-
-## Mind Map
-![screen shot 2018-05-04 at 4 51 06 pm](https://user-images.githubusercontent.com/16514603/39798118-642aa680-531c-11e8-882e-f4116bcca842.png)
-
-### Mind Map Notes
-![screen shot 2018-05-04 at 4 54 42 pm](https://user-images.githubusercontent.com/16514603/39798167-94ebcd3a-531c-11e8-844e-ca611fa64180.png)
-
-![screen shot 2018-05-04 at 4 54 54 pm](https://user-images.githubusercontent.com/16514603/39798168-97131bb8-531c-11e8-9aeb-47269d0afcdc.png)
-
