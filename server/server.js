@@ -11,7 +11,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 
-const db = process.env.MONGODB_URI || "mongodb://localhost:27017/group-trips";
+const database = process.env.MONGODB_URI || "mongodb://localhost:27017/group-trips";
 // connect to database
 // mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb://localhost/group-trip // how to name this",
@@ -21,7 +21,7 @@ const db = process.env.MONGODB_URI || "mongodb://localhost:27017/group-trips";
 //         console.log("Connected to the database");
 //     }
 // );
-mongoose.connect(db, (err) => {
+mongoose.connect(database, (err) => {
     if (err) console.error(err);
     console.log("Connected to MongoDB");
 })
