@@ -22,7 +22,7 @@ const travelerSchema = new Schema({
     description:{
         type: String,
         required: false
-    }
+    },
     phone:{
         type: Number,
         required: false
