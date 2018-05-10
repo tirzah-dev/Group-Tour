@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import "../views/main.css";
+import "./views/main.css";
 
 function Home (props){
     return(
