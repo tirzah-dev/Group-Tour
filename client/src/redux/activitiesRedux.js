@@ -34,7 +34,7 @@ const activitiesReducer = (state = initialState, action) => {
                 loading: false,
                 activitiesData: state.activitiesData.map(activity => {
                     if (activity._id === action.id) {
-                        return editedActivity
+                        return action.editedActivity
                     } else {
                         return activity
                     }
