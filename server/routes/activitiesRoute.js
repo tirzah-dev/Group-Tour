@@ -37,7 +37,6 @@ activitiesRouter.put("/:activityId", (req, res) => {
         }
     );
 });
-//delete works
 activitiesRouter.delete("/:activityId", (req, res) => {
     Activity.findOneAndRemove({_id: req.params.activityId}, (err, activity) => {
         if (err) return res.status(500).send(err);
