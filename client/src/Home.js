@@ -14,10 +14,10 @@ function Home (props){
        <ul>
                 <ul>
                     <button className="exit-menu fa fa-times"> </button>
-                    <Link to="" id=""><li className="active">welcome</li></Link>
-                    <Link to="" id=""><li> sign in</li></Link> 
-                    <Link to="" id=""><li> register</li></Link> 
-                    <Link to="" id=""><li> contact</li></Link> 
+                    <Link to="/" id="home"><li className="active">welcome</li></Link>
+                    <Link to="/login" id="login"><li> sign in</li></Link> 
+                    <Link to="/signup" id="signup"><li> sign up</li></Link> 
+                    {/* <Link to="" id=""><li> contact</li></Link>  */}
                 </ul>
                    </ul> 
             </div>
@@ -36,7 +36,7 @@ function Home (props){
             <h2> * </h2>
             <p> Invite the rest of your group to your own private network to collborate together, to create a an unforgetable experience.
             </p>
-            <Link to="" id=""> Create a Group</Link>
+            <Link to="/login" id="login-link"> Create a Group</Link>
         </div>
         <div className="stuffed-cherries" data-aos="fade-left" data-aos-delay="300">
         </div>
@@ -73,12 +73,9 @@ function Home (props){
             <h2> * </h2>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.Enim animi odit in dignissimos neque ratione, laboriosam rerum!Deleniti accusamus non, aliquam tempora, mollitia laborum ad, fugiat at explicabo esse aut.Lorem ipsum dolor sit amet,
                 adipisicing elit</p>
-         <Link to="" id="">Join Now</Link>
+         <Link to="login" id="second-login-link">Join Now</Link>
         </div>
-        <div>
-            <img src="http://nilishasingh.com/wp-content/uploads/2017/09/10-e1506539438462.jpg" data-aos="fade-up" data-aos-delay="300"/>
-            <img src="https://data.whicdn.com/images/110046678/large.jpg" data-aos="fade-down" data-aos-delay="300"/>
-        </div>
+       
     </section>
 
     <footer>
