@@ -1,5 +1,5 @@
 {
-  "name": "group-tour-app",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -10,8 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
-    "mongoose": "^5.0.17"
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.17",
+    "morgan": "^1.9.0"
   }
 }
