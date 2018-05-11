@@ -16,7 +16,7 @@ function Home (props){
                     <button className="exit-menu fa fa-times"> </button>
                     <Link to="/" id="home"><li className="active">welcome</li></Link>
                     <Link to="/login" id="login"><li> sign in</li></Link> 
-                    {/* <Link to="registration" id="registraion"><li> register</li></Link>  */}
+                    <Link to="/signup" id="signup"><li> sign up</li></Link> 
                     {/* <Link to="" id=""><li> contact</li></Link>  */}
                 </ul>
                    </ul> 
@@ -36,7 +36,7 @@ function Home (props){
             <h2> * </h2>
             <p> Invite the rest of your group to your own private network to collborate together, to create a an unforgetable experience.
             </p>
-            <Link to="" id=""> Create a Group</Link>
+            <Link to="/login" id="login-link"> Create a Group</Link>
         </div>
         <div className="stuffed-cherries" data-aos="fade-left" data-aos-delay="300">
         </div>
