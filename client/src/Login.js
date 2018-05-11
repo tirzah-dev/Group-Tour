@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../views/auth-page.css';
-import '../views/auth-page.js';
+import './views/login.css';
+// import '../views/login.js';
 //handleChange and handleSubmit will need to be imported and added into the approciate places within the tag elements.
 
 function Login(props) {
