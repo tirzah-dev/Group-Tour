@@ -8,7 +8,6 @@ function Home (props){
         <body>
     <header>
         <nav>
-    <Link to="/" id="home"><h2 id="logo"> Collaborate</h2></Link>
             <button className="nav-button fa fa-bars"> </button>
             <div>
        <ul>
