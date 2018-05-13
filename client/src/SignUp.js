@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Link} from "react-router-dom";
-import "../view/signup.css";
-import GroupSetup from './GroupSetup';
+import "./views/signup.css";
+import {signup} from "react-redux";
+// import GroupSetup from './GroupSetup';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -16,26 +17,41 @@ export default class SignUp extends Component {
             }
         }
         this.state = this.initialState.bind("this");
+        this.handleSubmit= this.handleSubmit.bind('this');
+        this.handleChange = this.handleChange.bind('this');
+    
+  const handleChange = (e) => {
+     this.setState ({
+         inputs: e.target.value
+     })
+     const handleSubmit = (e) => {
+         e.preventDefault();
+         this.props.signup(this.state.inputs);
+
+     }
     }
-        render() {
+    }
+        render(props) {
+            const { signup, handleChange, handleSubmit}= this.props;  
             <div>
-                <GroupSetup/>
+                {/* <GroupSetup/> */}
             </div>
             return (
+                 
                 <div>
                     <body>
                         <div class="background-signup-page">
 
                             <img src="./assets/travel.gif" alt="travel site" />
                             <div class="signup-container">
-                                <form id="sign-up-form">
+                                <form onSubmit={this.handleSubmit} id="sign-up-form">
                                     <div class="signup-header">
                                         <h1 className="signup-h1">Sign Up for Free</h1>
                                     </div>
-                                    <input class="traveler-name" type="text" name="traveler-name" placeholder="Name*" required="" />
-                                    <input class="username-selection-input" name="traveler-username" type="text" placeholder="Choose a User Name*" required="" />
-                                    <input type="text" name="email" placeholder="Email Address*" required="" />
-                                    <input type="text" name="signup-password" placeholder="Set a password*" required="" />
+                                    <input onChange={this.handleChange} class="traveler-name" type="text" name="traveler-name" placeholder="Name*" required="" />
+                                    <input  onChange={this.handleChange} class="username-selection-input" name="traveler-username" type="text" placeholder="Choose a User Name*" required="" />
+                                    <input onChange={this.handleChange} type="text" name="email" placeholder="Email Address*" required="" />
+                                    <input onChange={this.handleChange} type="text" name="signup-password" placeholder="Set a password*" required="" />
                                     <Link to="/signup" id="signup-btn">  <button type="submit" class="sign-up-button">Get Started</button></Link>
                                 </form>
                             </div>
@@ -47,4 +63,4 @@ export default class SignUp extends Component {
         }
     }
 
-    export default Signup;
+   
