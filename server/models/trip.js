@@ -5,12 +5,16 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
-    destination:{
-        location:{
-            city: String,
-            state: String,
-            country: String
-        },
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: false
+    },
+    country: {
+        type: String,
         required: true
     },
     startDate: {
