@@ -4,20 +4,16 @@ const { Schema } = mongoose;
 
 const activitySchema = new Schema ({
     name:{
-        type:String,
+        type: String,
         required: true
-    },
-    totalVotes:{
-        type: Number,
     },
     description:{
         type: String,
-        required: false
     },
     image:{
         type: String,
-        required: false
-    }
+    },
+    destination: [String]
 });
 
 module.exports = mongoose.model("Activity", activitySchema);
