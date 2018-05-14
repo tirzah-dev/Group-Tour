@@ -13,7 +13,7 @@ const tripSchema = new Schema({
         type: Date,
         required: false
     },
-    endDate: { //do we really need an end date??
+    endDate: {
         type: Date,
         required: false
     },
