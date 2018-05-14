@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from "react-router-dom";
 import "./views/signup.css";
 import {signup} from "react-redux";
-// import GroupSetup from './GroupSetup';
+import GroupInfo from './GroupInfo';
 
 export default class SignUp extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ export default class SignUp extends Component {
         render(props) {
             const { signup, handleChange, handleSubmit}= this.props;  
             <div>
-                {/* <GroupSetup/> */}
+                <GroupInfo/>
             </div>
             return (
                  
@@ -48,10 +48,10 @@ export default class SignUp extends Component {
                                     <div class="signup-header">
                                         <h1 className="signup-h1">Sign Up for Free</h1>
                                     </div>
-                                    <input onChange={this.handleChange} class="traveler-name" type="text" name="traveler-name" placeholder="Name*" required="" />
-                                    <input  onChange={this.handleChange} class="username-selection-input" name="traveler-username" type="text" placeholder="Choose a User Name*" required="" />
-                                    <input onChange={this.handleChange} type="text" name="email" placeholder="Email Address*" required="" />
-                                    <input onChange={this.handleChange} type="text" name="signup-password" placeholder="Set a password*" required="" />
+                                    <input onChange={this.handleChange} value={this.state.inputs.traveler_name}class="traveler-name" type="text" name="traveler-name" placeholder="Name*" required="" />
+                                    <input  onChange={this.handleChange} value={this.state.inputs.username}class="username-selection-input" name="traveler-username" type="text" placeholder="Choose a User Name*" required="" />
+                                    <input onChange={this.handleChange} value={this.state.inputs.email}type="text" name="email" placeholder="Email Address*" required="" />
+                                    <input onChange={this.handleChange} value={this.state.inputs.password}type="text" name="signup-password" placeholder="Set a password*" required="" />
                                     <Link to="/signup" id="signup-btn">  <button type="submit" class="sign-up-button">Get Started</button></Link>
                                 </form>
                             </div>
