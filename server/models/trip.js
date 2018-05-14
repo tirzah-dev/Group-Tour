@@ -6,14 +6,18 @@ const { Schema } = mongoose;
 
 const tripSchema = new Schema({
     destination:{
-        type:String,
+        location:{
+            city: String,
+            state: String,
+            country: String
+        },
         required: true
     },
     startDate: {
         type: Date,
         required: false
     },
-    endDate: { //do we really need an end date??
+    endDate: {
         type: Date,
         required: false
     },
