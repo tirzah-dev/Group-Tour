@@ -53,6 +53,8 @@ h1 {
 li {
     margin: 20px;
     color: white;
+    position: relative;
+
 }
 
 input {
