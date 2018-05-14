@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import '../views/auth-page.css';
-import '../views/auth-page.js';
-//handleChange and handleSubmit will need to be imported and added into the approciate places within the tag elements.
+import './views/login.css';
+// import '../views/login.js';
 
 function Login(props) {
     //const{user_name, password, isAuth, is Admin} = props from the component pulling the data
