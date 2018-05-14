@@ -6,7 +6,11 @@ const { Schema } = mongoose;
 
 const tripSchema = new Schema({
     destination:{
-        type:String,
+        location:{
+            city: String,
+            state: String,
+            country: String
+        },
         required: true
     },
     startDate: {
