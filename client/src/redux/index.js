@@ -5,7 +5,14 @@ import travelersReducer from "./travelersRedux";
 import tripsReducer from "./tripsRedux";
 import activitiesReducer from "./activitiesRedux";
 
-const store = createStore(combineReducers({travelers: travelersReducer, trips: tripsReducer, activities: activitiesReducer}), applyMiddleware(thunk));
+const store = createStore(
+    combineReducers({
+        travelers: travelersReducer, 
+        trips: tripsReducer, 
+        activities: activitiesReducer
+    }),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk));
 
 store.subscribe(() => console.log(store.getState()));
 
