@@ -8,7 +8,7 @@
 }
 
 .background-signup-page {
-    background-image: url(http://collaborate.netlify.com/assets/travel.gif")
+    background-image: url(http://collaborate.netlify.com/assets/travel.gif)
 }
 
 img {
@@ -16,7 +16,7 @@ img {
     height: 100vh;
 }
 
-body {
+.body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 400;

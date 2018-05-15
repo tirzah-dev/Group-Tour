@@ -5,15 +5,26 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
-    destination:{
-        type:String,
+
+
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: false
+    },
+    country: {
+        type: String,
         required: true
     },
     startDate: {
         type: Date,
         required: false
     },
-    endDate: { //do we really need an end date??
+
+    endDate: {
         type: Date,
         required: false
     },
