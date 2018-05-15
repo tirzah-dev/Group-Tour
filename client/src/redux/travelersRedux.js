@@ -122,7 +122,7 @@ export const login = credentials => {
 
 export const logout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    localStorage.removeItem("traveler");
     return {
         type: "LOGOUT"
     }
