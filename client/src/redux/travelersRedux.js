@@ -75,6 +75,8 @@ export function verify() {
 }
 //double check all routes with backend
 export const signup = userInfo => {
+    console.log("I made it to signup!")
+    console.log(userInfo);
     return dispatch => {
         axios.post("auth/signup", userInfo)
             .then(response => {
