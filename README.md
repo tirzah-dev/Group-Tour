@@ -1,5 +1,5 @@
 # 2018 V School Final Group Project
-by, Danielle Walker, Lelana 'Heaven' Villa and Tirzah Evengelista
+by, Danielle Walker, Lelana 'Heaven' Villa and Tirzah Evangelista
 
 ## Description
 The Group Tour App is a place where friends/family can collaborate to plan out their activities for a group vacation. They will be able to share attractions and activities and then vote and comment on them. This interactive app helps groups of friends or family decide what to do once they get to where they are going.
@@ -8,8 +8,13 @@ The Group Tour App is a place where friends/family can collaborate to plan out t
 ### Landing Page
 <img width="1213" alt="screen shot 2018-05-09 at 12 07 38 am" src="https://user-images.githubusercontent.com/16514603/39798303-34be4ad6-531d-11e8-9859-56803ec019be.png">
 <img width="1207" alt="screen shot 2018-05-09 at 12 08 10 am" src="https://user-images.githubusercontent.com/16514603/39798305-36befa06-531d-11e8-9ee0-fc4f4e60fdb0.png">
+
 ### Sign In / Log In
-<img width="1211" alt="screen shot 2018-05-09 at 12 08 29 am" src="https://user-images.githubusercontent.com/16514603/39798309-388a324c-531d-11e8-8830-b3ea9696a7dc.png">
+<img width="1379" alt="screen shot 2018-05-15 at 12 10 32 pm" src="https://user-images.githubusercontent.com/16514603/40075317-4b7ef3c6-5839-11e8-9423-7b74aa06af33.png">
+
+### Trips Landing Page
+
+<img width="1139" alt="screen shot 2018-05-15 at 12 27 54 pm" src="https://user-images.githubusercontent.com/16514603/40076182-7a40dd1c-583b-11e8-864e-5a12d20bf2d4.png">
 
 ## Mind Map
 ![screen shot 2018-05-04 at 4 51 06 pm](https://user-images.githubusercontent.com/16514603/39798118-642aa680-531c-11e8-882e-f4116bcca842.png)
@@ -34,8 +39,7 @@ A typical user on our app is generally 20-50 years old and has some experience w
 - As a group member I can edit activities - possibly only ones I enter, so that I can clarify things
 - As a group member I can add comments to activities so that people will know my thoughts on their idea or we can have a conversation about that idea
 - As a group member I will have a profile page with my basic info so others can be aware of who is commenting and adding the events
-#### Beyond MVP
-*** Do we want the ability for others to see great trip ideas that other groups have voted on?- maybe a search function for cities? - NOT MVP just keeping track of this idea
+
 ##### Group Creator
 - As a group creator I can finalize our trip so we can all be on the same page as our trip approaches
 ##### Member
@@ -43,3 +47,6 @@ A typical user on our app is generally 20-50 years old and has some experience w
 - As a group member I can send all group members notifications or comments
 ##### Site Visitors(not yet members)
 - As a site visitor I can get travel itinerary ideas from suggestions
+#### Beyond MVP
+ Do we want the ability for others to see great trip ideas that other groups have voted on?- maybe a search function for cities? 
+ A way to interact with an external APi that has tours in different cities.
