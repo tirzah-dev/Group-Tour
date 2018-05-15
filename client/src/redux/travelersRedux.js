@@ -8,7 +8,7 @@ profileAxios.interceptors.request.use(config => {
 })
 
 const initialState = {
-    loading: true,
+    loading: false,
     username: "",
     isAdmin: false,
     isAuthenticated: false,
@@ -22,6 +22,11 @@ const initialState = {
 
 const travelersReducer = (state = initialState, action) => {
     switch (action.type) {
+        case "AUTHENTICATE_BEGIN":
+            return {
+                ...state,
+                loading: true
+            }
         case "AUTHENTICATE":
             return {
                 ...state,
@@ -31,7 +36,7 @@ const travelersReducer = (state = initialState, action) => {
                     signup: "",
                     login: ""
                 },
-                travelerData: action.user
+                travelerData: action.traveler
             }
         case "LOGOUT":
             return {
@@ -56,35 +61,45 @@ const travelersReducer = (state = initialState, action) => {
         default: return state;
     }
 }
-function authenticate(user) {
+function authenticate(traveler) {
     return {
         type: "AUTHENTICATE",
-        user
+        traveler
+    }
+}
+export const authError = (key, errCode) => {
+    return {
+        type: "AUTH_ERROR",
+        key,
+        errCode
     }
 }
 
 //double check what the route is in the database /api/????what did we call it???
 export function verify() {
     return dispatch => {
-        profileAxios.get("/api/profile")
+        profileAxios.get("/api/travelers")
             .then(response => {
-                const { user } = response.data;
-                dispatch(authenticate(user));
+                const { traveler } = response.data;
+                dispatch(authenticate(traveler));
             })
     }
 }
 //double check all routes with backend
-export const signup = userInfo => {
+export const signup = (userInfo) => {
     return dispatch => {
-        axios.post("auth/signup", userInfo)
+        dispatch({
+            type: "AUTHENTICATE_BEGIN"
+        })
+        axios.post("/auth/signup", userInfo)
             .then(response => {
-                const { token, user } = response.data;
+                const { token, traveler } = response.data;
                 localStorage.setItem("token", token);
-                localStorage.setItem("user", JSON.stringify(user));
-                dispatch(authenticate(user));
+                localStorage.setItem("traveler", JSON.stringify(traveler));
+                dispatch(authenticate(traveler));
             })
             .catch(err => {
-                dispatch(authError("signup", err.response.status))
+                dispatch(authError("signup", err));
             })
     }
 }
@@ -92,12 +107,12 @@ export const signup = userInfo => {
 //double check all routes with backend
 export const login = credentials => {
     return dispatch => {
-        axios.post("auth/login", credentials)
+        axios.post("/auth/login", credentials)
             .then(response => {
-                const { token, user } = response.data;
+                const { token, traveler } = response.data;
                 localStorage.setItem("token", token);
-                localStorage.setItem("user", JSON.stringify(user));
-                dispatch(authenticate(user));
+                localStorage.setItem("traveler", JSON.stringify(traveler));
+                dispatch(authenticate(traveler));
             })
             .catch(err => {
                 dispatch(authError("login", err.response.status))
@@ -113,13 +128,6 @@ export const logout = () => {
     }
 }
 
-export const authError = (key, errCode) => {
-    return {
-        type: "AUTH_ERROR",
-        key,
-        errCode
-    }
-}
 
 //editing a travler // CHECK ROUTES
 export const editTraveler = (editedTraveler, id) => {

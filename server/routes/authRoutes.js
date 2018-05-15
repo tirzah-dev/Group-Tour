@@ -3,8 +3,11 @@ const Traveler = require("../models/traveler");
 const authRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
+
+//goal: create a traveler at registration
+//current: working
 authRouter.post("/signup", (req, res) => {
-    Traveler.findOne({ username: req.body.username }, (err, existingUser) => {
+    Traveler.findOne({ username: req.body.username }, (err, existingTraveler) => {
         if (err) return res.status(500).send({ success: false, err });
         if (existingTraveler !== null) {
             return res.status(400).send({ success: false, err: "That username already exists!" });
@@ -14,10 +17,13 @@ authRouter.post("/signup", (req, res) => {
             if (err) return res.status(500).send({ success: false, err });
             const token = jwt.sign(traveler.toObject(), process.env.SECRET);
             return res.status(201).send({ success: true, traveler: traveler.withoutPassword(), token });
-        });
+
+        }); 
     });
 });
 
+//goal: login with a valid user
+//current: testing
 authRouter.post("/login", (req, res) => {
     Traveler.findOne({ username: req.body.username.toLowerCase() }, (err, traveler) => {
         if (err) return res.status(500).send(err);

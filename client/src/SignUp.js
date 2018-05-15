@@ -1,66 +1,89 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./views/signup.css";
-import {signup} from "react-redux";
+import { signup } from "./redux/travelersRedux";
+import { connect } from "react-redux"
+
 import GroupInfo from './GroupInfo';
 
-export default class SignUp extends Component {
-    constructor(props) {
-        super(props);
-        this.initialState = {
+class SignUp extends Component {
+    constructor() {
+        super();
+        this.state = {
             inputs: {
-                traveler_name: "",
-                username: "",
+                name: "",
                 email: "",
-                password: "",
-
+                username: "",
+                password: ""
             }
         }
-        this.state = this.initialState.bind("this");
-        this.handleSubmit= this.handleSubmit.bind('this');
-        this.handleChange = this.handleChange.bind('this');
-    
-  const handleChange = (e) => {
-     this.setState ({
-         inputs: e.target.value
-     })
-     const handleSubmit = (e) => {
-         e.preventDefault();
-         this.props.signup(this.state.inputs);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-     }
+    handleChange(e) {
+        e.persist();
+        this.setState(prevState => {
+            return {
+                inputs: {
+                    ...prevState.inputs,
+                    [e.target.name]: e.target.value
+                }
+            }
+        })
+        console.log(this.state.inputs)
     }
+
+    clearInputs() {
+        this.setState({
+            inputs: {
+                name: "",
+                email: "",
+                username: "",
+                password: ""
+            }
+        })
     }
-        render(props) {
-            const { signup, handleChange, handleSubmit}= this.props;  
+
+    handleSubmit(e) {
+        console.log("did I make it here");
+        e.preventDefault();
+        this.props.signup(this.state.inputs);
+        this.clearInputs();
+    }
+
+    render(props) {
+        const authErrorCode = this.props.authErrCode.signup;
+        const { name, username, password, email } = this.state.inputs;
+        let errMsg = "";
+        if (authErrorCode < 500 && authErrorCode > 399) {
+            errMsg = "Invalid username or password"
+        } else if (authErrorCode > 499) {
+            errMsg = "Server error!"
+        }
+        return (
             <div>
-                <GroupInfo/>
-            </div>
-            return (
-                 
-                <div>
-                    <body>
-                        <div class="background-signup-page">
-
-                            <img src="./assets/travel.gif" alt="travel site" />
-                            <div class="signup-container">
-                                <form onSubmit={this.handleSubmit} id="sign-up-form">
-                                    <div class="signup-header">
-                                        <h1 className="signup-h1">Sign Up for Free</h1>
-                                    </div>
-                                    <input onChange={this.handleChange} value={this.state.inputs.traveler_name}class="traveler-name" type="text" name="traveler-name" placeholder="Name*" required="" />
-                                    <input  onChange={this.handleChange} value={this.state.inputs.username}class="username-selection-input" name="traveler-username" type="text" placeholder="Choose a User Name*" required="" />
-                                    <input onChange={this.handleChange} value={this.state.inputs.email}type="text" name="email" placeholder="Email Address*" required="" />
-                                    <input onChange={this.handleChange} value={this.state.inputs.password}type="text" name="signup-password" placeholder="Set a password*" required="" />
-                                    <Link to="/signup" id="signup-btn">  <button type="submit" class="sign-up-button">Get Started</button></Link>
-                                </form>
+                <div className="background-signup-page">
+                    <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
+                    <div className="signup-container">
+                        <form id="sign-up-form">
+                            <div className="signup-header">
+                                <h1 className="signup-h1">Sign Up for Free</h1>
                             </div>
-                        </div>
-                    </body>
+                            <input onChange={this.handleChange} className="traveler-name" type="text" name="name" value={name} placeholder="Name*" required="" />
+                            <input onChange={this.handleChange} className="username-selection-input" name="username" value={username} type="text" placeholder="User Name*" required="" />
+                            <input onChange={this.handleChange} type="text" name="email" value={email} placeholder="Email Address*" required="" />
+                            <input onChange={this.handleChange} type="text" name="password" value={password} placeholder="Set a password*" required="" />
+                            <button type="submit" onClick={this.handleSubmit} className="sign-up-button">Login</button>
+                        </form>
+                    </div>
                 </div>
 
-            )
-        }
-    }
+            </div>
 
-   
+        )
+    }
+}
+
+export default connect(state => state.travelers, { signup })(SignUp)
+
