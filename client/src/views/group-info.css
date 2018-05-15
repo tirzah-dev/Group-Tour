@@ -1,5 +1,5 @@
-$color-main: teal;
-$black: #202020;
+
+
 body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -15,7 +15,7 @@ div {
     font-weight: 800;
     padding: 20px;
     text-transform: uppercase;
-    color: $black;
+    color: black;
     display: inline-block;
     position: relative;
 }
@@ -27,7 +27,12 @@ div {
     text-align: left;
     color: #404040;
     padding: 20px;
-    &.txt-center {
+
+}
+
+/* &.txt-center {
+
+
         text-align: center;
     }
     a {
@@ -35,7 +40,6 @@ div {
     }
 }
 
-// ANIMATION
 .has-animation {
     position: relative;
     p,
@@ -119,4 +123,6 @@ div {
     100% {
         opacity: 1;
     }
-}
+} */
+
+

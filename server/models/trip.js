@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
+
+
     city: {
         type: String,
         required: true
@@ -21,6 +23,7 @@ const tripSchema = new Schema({
         type: Date,
         required: false
     },
+
     endDate: {
         type: Date,
         required: false
