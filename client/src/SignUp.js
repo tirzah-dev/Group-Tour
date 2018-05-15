@@ -50,13 +50,11 @@ class SignUp extends Component {
         e.preventDefault();
         this.props.signup(this.state.inputs);
         this.clearInputs();
-        this.props.history.push('/groupinfo');
-
     }
 
     render(props) {
         const authErrorCode = this.props.authErrCode.signup;
-        const {name, username, password, email} = this.state.inputs;
+        const { name, username, password, email } = this.state.inputs;
         let errMsg = "";
         if (authErrorCode < 500 && authErrorCode > 399) {
             errMsg = "Invalid username or password"
@@ -65,18 +63,18 @@ class SignUp extends Component {
         }
         return (
             <div>
-                <div class="background-signup-page">
+                <div className="background-signup-page">
                     <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
-                    <div class="signup-container">
+                    <div className="signup-container">
                         <form id="sign-up-form">
-                            <div class="signup-header">
+                            <div className="signup-header">
                                 <h1 className="signup-h1">Sign Up for Free</h1>
                             </div>
-                            <input onChange={this.handleChange} class="traveler-name" type="text" name="name" value={name} placeholder="Name*" required="" />
-                            <input onChange={this.handleChange} class="username-selection-input" name="username" value={username} type="text" placeholder="User Name*" required="" />
+                            <input onChange={this.handleChange} className="traveler-name" type="text" name="name" value={name} placeholder="Name*" required="" />
+                            <input onChange={this.handleChange} className="username-selection-input" name="username" value={username} type="text" placeholder="User Name*" required="" />
                             <input onChange={this.handleChange} type="text" name="email" value={email} placeholder="Email Address*" required="" />
                             <input onChange={this.handleChange} type="text" name="password" value={password} placeholder="Set a password*" required="" />
-                            <button type="submit" onClick={this.handleSubmit}class="sign-up-button"><Link to="/groupinfo" id="signup-btn">Get Started</Link></button>
+                            <button type="submit" onClick={this.handleSubmit} className="sign-up-button">Login</button>
                         </form>
                     </div>
                 </div>

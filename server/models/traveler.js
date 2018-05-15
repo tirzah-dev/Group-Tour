@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 const travelerSchema = new Schema({
     name: {
         type: String,
-        required: true
+        // required: true
     },
     username:{
         type: String,
@@ -20,7 +20,7 @@ const travelerSchema = new Schema({
     },
     email:{
         type: String,
-        required: true
+        // required: true
     },
     description:{
         type: String,
