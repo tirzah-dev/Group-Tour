@@ -4,6 +4,7 @@ import Home from "./Home";
 import Login from "./Login";
 import SignUp from './SignUp';
 import GroupInfo from './GroupInfo';
+import Card from './Card';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path='/login' component={Login} />
                 <Route path='/signup' component={SignUp} />
                 <Route path='/groupinfo' component={GroupInfo}/>
+                <Route path='/card' component={Card}/>
 
 
             </Switch>
