@@ -13,9 +13,9 @@ function Home (props){
        <ul>
                 <ul>
                     <button className="exit-menu fa fa-times"> </button>
-                    <Link to="/" id="home"><li className="active">welcome</li></Link>
-                    <Link to="/login" id="login"><li> sign in</li></Link> 
-                    <Link to="/signup" id="signup"><li> sign up</li></Link> 
+                   <li> <Link to="/" id="home" className="active">welcome</Link></li>
+                   <li> <Link to="/login" id="login"> sign in</Link> </li>
+                   <li> <Link to="/signup" id="signup"> sign up</Link> </li>
                     {/* <Link to="" id=""><li> contact</li></Link>  */}
                 </ul>
                    </ul> 
@@ -35,7 +35,7 @@ function Home (props){
             <h2> * </h2>
             <p> Invite the rest of your group to your own private network to collborate together, to create a an unforgetable experience.
             </p>
-            <Link to="/login" id="login-link"> Create a Group</Link>
+        <h4 className="link"> <Link to="/login" id="login-link"> Create a Group</Link></h4>
         </div>
         <div className="stuffed-cherries" data-aos="fade-left" data-aos-delay="300">
         </div>
@@ -73,7 +73,9 @@ function Home (props){
             <h1> <span className="custom-font alex-brush">Share</span><br/></h1>
             <h2> * </h2>
             <p> Share ideas, places you'd like to go visit, deals, pretty much anything with collaborate. </p>
-         <Link to="login" id="second-login-link">Join Now</Link>
+
+       <h4 className="link">  <Link to="login" id="second-login-link">Join Now</Link></h4>
+
         </div>
        
     </section>

@@ -5,15 +5,13 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
-
-
     city: {
         type: String,
         required: true
     },
     state: {
         type: String,
-        required: false
+        required: false   
     },
     country: {
         type: String,

@@ -3,6 +3,7 @@ const Traveler = require("../models/traveler");
 const authRouter = express.Router();
 const jwt = require("jsonwebtoken");
 
+
 //goal: create a traveler at registration
 //current: working
 authRouter.post("/signup", (req, res) => {
@@ -16,6 +17,7 @@ authRouter.post("/signup", (req, res) => {
             if (err) return res.status(500).send({ success: false, err });
             const token = jwt.sign(traveler.toObject(), process.env.SECRET);
             return res.status(201).send({ success: true, traveler: traveler.withoutPassword(), token });
+
         }); 
     });
 });
