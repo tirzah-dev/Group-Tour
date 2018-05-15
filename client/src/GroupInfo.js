@@ -1,6 +1,9 @@
 import React from 'react';
 import './views/group-info.css';
 import { Link } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+import { logout } from './redux/travelersRedux';
 // import {getTrips, addTrip} from '../redux/tripsRedux.js';
 
 function GroupInfo(props) {
@@ -8,7 +11,7 @@ function GroupInfo(props) {
     <div>
       <br />
       <div className="has-animation animation-ltr" data-delay="10">
-        <p className="bigger">Your Groups </p>
+        <p className="bigger">Your Trips</p>
       </div>
 
       <br />
@@ -16,18 +19,24 @@ function GroupInfo(props) {
       <br />
 
       <div className="has-animation animation-rtl" data-delay="1000">
-        <p className="text">Just click on the trips name below to be taken to that page</p>
+        <p className="text">Just click on a trip below to see details.</p>
         <ul className="text">
-
           {/* <li>{array  travelers_current groups in a list style}</li> */}
         </ul>
       </div>
       <br />
       <br />
       <div className="has-animation animation-ltr" data-delay="1500">
-        <p className="text txt-center">If this is your first time here, click below to create a trip, and invite members to your trips page to collaborate together on planning the perfect group trip.
-      <Link to='/tripdetails' id='trip_details'> Create New Trip</Link>
-          <br /></p>
+        <p className="text txt-center">If this is your first time here, click below to create a trip, and invite members to your trips page to collaborate together on planning the perfect group adventure.
+        <Link to='/tripdetails' id='trip_details'> Create New Trip</Link>
+        <br />
+        </p>
+        <nav>
+          <Link to="/">
+            <button onClick={props.logout}>Logout</button>
+          </Link>
+          {/* <Link></Link> */}
+        </nav>
       </div>
       <br />
       <br />
@@ -45,6 +54,6 @@ function GroupInfo(props) {
     </div>
   )
 }
-export default GroupInfo;
+export default connect(state=> state.auth, { logout })(GroupInfo);
 
 
