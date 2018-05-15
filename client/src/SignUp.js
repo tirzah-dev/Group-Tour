@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import "./views/signup.css";
+
 import GroupInfo from './GroupInfo';
+
 
 
 
@@ -37,7 +39,6 @@ function SignUp(props) {
 //          e.preventDefault();
 //          this.props.signup(this.state.inputs);
 
-     
     // }}
     // }
         // render(props) {
@@ -45,6 +46,7 @@ function SignUp(props) {
         //     <div>
         //         <GroupInfo/>
         //     </div>
+
             return (
                  
                 <div>
@@ -53,6 +55,7 @@ function SignUp(props) {
 
                             <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
                             <div class="signup-container">
+
                                 <form  id="sign-up-form">
                                     <div class="signup-header">
                                         <h1 className="signup-h1">Sign Up for Free</h1>
@@ -62,6 +65,7 @@ function SignUp(props) {
                                     <input type="text" name="email" placeholder="Email Address*" required="" />
                                     <input type="text" name="signup-password" placeholder="Set a password*" required="" />
                                     <Link to="/groupinfo" id="signup-btn">  <button type="submit" class="sign-up-button">Get Started</button></Link>
+
                                 </form>
                             </div>
                         </div>
@@ -70,4 +74,6 @@ function SignUp(props) {
 
             )
         }
+
         export default SignUp
+

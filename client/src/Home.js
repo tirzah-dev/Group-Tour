@@ -73,7 +73,9 @@ function Home (props){
             <h1> <span className="custom-font alex-brush">Share</span><br/></h1>
             <h2> * </h2>
             <p> Share ideas, places you'd like to go visit, deals, pretty much anything with collaborate. </p>
+
        <h4 className="link">  <Link to="login" id="second-login-link">Join Now</Link></h4>
+
         </div>
        
     </section>
