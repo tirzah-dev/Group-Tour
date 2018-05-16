@@ -1,9 +1,10 @@
 import React from 'react'
+import ProfileCard from './ProfileCard';
 
 function SidebarLeft(props) {
     return (
         <div>
-           This is where the profile component and group members component will be nested. 
+          <ProfileCard/>
         </div>
     )
 }
