@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
-import GroupWall from './GroupWall';
+
 
 
 function TripDetails(props){
@@ -30,7 +30,7 @@ function TripDetails(props){
     <br/>
     <div>
         
-            <Link to="/groupwall"> <button class="submit"  type="button" id="nextBtn">Submit</button></Link>
+            <Link to="/groupwalllayout" id="group-wall-layout"> <button class="submit"  type="button" id="nextBtn">Submit</button></Link>
         </div>
    
 
