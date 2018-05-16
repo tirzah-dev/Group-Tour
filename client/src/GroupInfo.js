@@ -54,6 +54,6 @@ function GroupInfo(props) {
     </div>
   )
 }
-export default connect(state=> state.auth, { logout })(GroupInfo);
+export default connect(state=> state.travelers, { logout })(GroupInfo);
 
 
