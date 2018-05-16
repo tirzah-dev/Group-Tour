@@ -22,6 +22,7 @@ tripsRouter.get("/travelers/:travelerId", (req, res) => {
 //goal: create new trip
 //current status: working
 tripsRouter.post("/", (req, res) => {
+    console.log(req.body);   
     const trip = new Trip(req.body);
     trip.traveler = req.traveler;
     trip.save(function (err, newTrip) {

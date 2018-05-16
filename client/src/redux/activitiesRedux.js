@@ -1,5 +1,11 @@
 import axios from "axios";
+const activityAxios = axios.create();
 
+activityAxios.interceptors.request.use(config =>{
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 const initialState = {
     activitiesData: [],
     loading: true,
@@ -69,7 +75,7 @@ const activitiesReducer = (state = initialState, action) => {
 //get activities
 const getActivities = () => {
     return dispatch => {
-        axios.get("/activities")
+        activityAxios.get("/activities")
             .then(response => {
                 dispatch({
                     type: "GET_ACTIVITIES",
@@ -87,7 +93,7 @@ const getActivities = () => {
 //add an activity
 const addActivity = newActivity =>{
     return dispatch =>{
-        axios.post("/activities", newActivity)
+        activityAxios.post("/activities", newActivity)
         .then(response => {
             dispatch({
                 type: "ADD_ACTIVITY",
@@ -106,7 +112,7 @@ const addActivity = newActivity =>{
 //edit activities
 const editActivities = (editedActivity, id) => {
     return dispatch => {
-        axios.put("/activities/" + id, editedActivity)
+        activityAxios.put("/activities/" + id, editedActivity)
             .then(response => {
                 dispatch({
                     type: "EDIT_ACTIVITY",
@@ -126,7 +132,7 @@ const editActivities = (editedActivity, id) => {
 //delete activity
 const delelteActivity = id => {
     return dispatch => {
-        axios.delete("/activities/" + id)
+        activityAxios.delete("/activities/" + id)
             .then(response => {
                 dispatch({
                     type: "DELETE_ACTIVITY",
@@ -145,7 +151,7 @@ const delelteActivity = id => {
 //adding or subtracting votes from activities
 const changeVotes = (id, votes) => {
     return dispatch => {
-        axios.put("/activities/" + id, votes)
+        activityAxios.put("/activities/" + id, votes)
             .then(response => {
                 dispatch({
                     type: "CHANGE_VOTES",

@@ -1,5 +1,11 @@
 import axios from "axios";
+const tripAxios = axios.create();
 
+tripAxios.interceptors.request.use(config =>{
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 const initialState = {
     tripsData: [],
     loading: true,
@@ -39,9 +45,9 @@ const tripsReducer = (state = initialState, action) => {
     }
 }
 //CHECK ROUTES!!!!!!
-const getTrips = () =>{
+export const getTrips = () =>{
     return dispatch => {
-        axios.get("/trips")
+        tripAxios.get("/api/trips")
         .then(response => {
             dispatch({
                 type: "GET_TRIPS",
@@ -58,10 +64,12 @@ const getTrips = () =>{
 }
 
 //add a new trip attach a personId to it
-const addTrip = newTrip => {
+export const addTrip = (newTrip) => {
     return dispatch => {
-        axios.post("/trips", newTrip)
+        console.log(newTrip);
+        tripAxios.post("/api/trips", newTrip)
             .then(response => {
+                // console.log(response.data);
                 dispatch({
                     type: "ADD_TRIP",
                     newTrip: response.data
@@ -77,9 +85,9 @@ const addTrip = newTrip => {
 }
 
 //edit a trip
-const editTrip = (editedTrip, id) => {
+export const editTrip = (editedTrip, id) => {
     return dispatch => {
-        axios.put("/trips/" + id, editedTrip)
+        tripAxios.put("/api/trips/" + id, editedTrip)
             .then(response => {
                 dispatch({
                     type: "EDIT_TRIP",
@@ -97,9 +105,9 @@ const editTrip = (editedTrip, id) => {
 }
 
 //delete a trip
-const deleteTrip = id => {
+export const deleteTrip = id => {
     return dispatch => {
-        axios.delete("/trips/" + id)
+        tripAxios.delete("/api/trips/" + id)
             .then(response => {
                 dispatch({
                     type: "DELETE_ISSUE",

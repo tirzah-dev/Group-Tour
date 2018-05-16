@@ -16,21 +16,21 @@ class App extends Component {
         return (
             <div>
                 {loading ?
-                 <div>...Loading user data</div>
-                 :
-                <Switch>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/login' render={props => isAuthenticated ?
-                        <Redirect to="/groupinfo" /> :
-                        <Login {...props} />
-                    } />
-                    <Route path='/signup' render={props => isAuthenticated ?
-                        <Redirect to="/groupinfo" /> :
-                        <SignUp {...props} />
-                    } />
-                    <ProtectedRoute path='/groupinfo' component={GroupInfo} />
-              <Route path='/tripdetails' component={TripDetails}/>
-                </Switch>
+                    <div>...Loading user data</div>
+                    :
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/login' render={props => isAuthenticated ?
+                            <Redirect to="/groupinfo" /> :
+                            <Login {...props} />
+                        } />
+                        <Route path='/signup' render={props => isAuthenticated ?
+                            <Redirect to="/groupinfo" /> :
+                            <SignUp {...props} />
+                        } />
+                        <ProtectedRoute path='/groupinfo' component={GroupInfo} />
+                        <ProtectedRoute path='/tripdetails' component={TripDetails} />
+                    </Switch>
                 }
             </div>
         )

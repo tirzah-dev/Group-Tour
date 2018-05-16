@@ -28,6 +28,7 @@ const tripSchema = new Schema({
         type: Date,
         required: false
     },
+
     travelers:{
         type: Array,
         required: false
