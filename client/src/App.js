@@ -32,7 +32,6 @@ class App extends Component {
                     <ProtectedRoute path='/groupinfo' component={GroupInfo} />
               <Route path='/tripdetails' component={TripDetails}/>
               <Route path='/groupwall' component={GroupWall}/>
-
                 </Switch>
                 }
             </div>
