@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './views/activity-section.css';
+import ActivityFeed from "./ActivityFeed";
 
 function Main(props) {
     return (
-        <div>
-            This is where the group Activity component will be nested.
+        <div className="activity-feed-holder">
+            <ActivityFeed/>
         </div>
+       
     )
 }
 
