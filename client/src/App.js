@@ -8,6 +8,7 @@ import SignUp from './SignUp';
 import GroupInfo from './GroupInfo';
 import ProtectedRoute from "./ProtectedRoute";
 import TripDetails from "./TripDetails";
+import GroupWall from './GroupWall';
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
                         } />
                         <ProtectedRoute path='/groupinfo' component={GroupInfo} />
                         <ProtectedRoute path='/tripdetails' component={TripDetails} />
+                        <ProtectedRoute path='/groupwall/:id' component={GroupWall}/>
                     </Switch>
                 }
             </div>

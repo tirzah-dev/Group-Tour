@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
+
 import GroupWall from './GroupWall';
 import {addTrip} from "./redux/tripsRedux";
-
 
 class TripDetails extends Component {
     constructor(props) {
@@ -16,8 +16,8 @@ class TripDetails extends Component {
                 country: "",
                 startDate: "",
                 endDate: "",
-                travelers: this.props.travelers.travelerData._id
-            }
+                // travelers: this.props.travelers.travelerData._id
+            },
         }
         this.state = this.initialState;
     }
@@ -36,18 +36,19 @@ class TripDetails extends Component {
     handleSubmit = (event) =>{
         event.preventDefault();
         console.log("am I handling the submit")
-        console.log(this.props);
-        this.props.addTrip(this.state.inputs);
+        this.props.addTrip(this.state.inputs, this.props.history);
         this.setState(this.initialState)
+
     }
 
     render(props) {
         const {name, city, country, startDate, endDate} = this.state.inputs;
-        console.log()
+        console.log("check for trip on traveler" + this.props)
         return (
             <div className="trip-details-wrapper">
                 <div className="background-trip-details-page">
                     {/* <img src="http://collaborate.netlify.com/as sets/travel.gif" alt="travel site"/> */}
+
                     <form className="form" name="registeration-form" id="regForm">
                         <h1 id="reg-form-title">Tell Us About Your Trip</h1>
                         <div className="tab name-info">Destination:
@@ -65,7 +66,7 @@ class TripDetails extends Component {
                         <br />
                         <br />
                         <div>
-                             <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button>
+                        <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -74,3 +75,4 @@ class TripDetails extends Component {
     }
 }
 export default connect(state => state, {addTrip})(TripDetails);
+

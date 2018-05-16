@@ -1,4 +1,6 @@
 import axios from "axios";
+import {editTraveler} from "./travelersRedux";
+
 const tripAxios = axios.create();
 
 tripAxios.interceptors.request.use(config =>{
@@ -9,7 +11,8 @@ tripAxios.interceptors.request.use(config =>{
 const initialState = {
     tripsData: [],
     loading: true,
-    errMsg: ""
+    errMsg: "",
+    // currentTripId: "",
 }
 
 this.state = this.initialState;
@@ -20,7 +23,8 @@ const tripsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                tripsData: [...state.tripsData, action.newIssue]
+                tripsData: [...state.tripsData, action.newTrip],
+                currentTripId: action.id
             }
         case "EDIT_TRIP":
             return {
@@ -64,7 +68,7 @@ export const getTrips = () =>{
 }
 
 //add a new trip attach a personId to it
-export const addTrip = (newTrip) => {
+export const addTrip = (newTrip, history) => {
     return dispatch => {
         console.log(newTrip);
         tripAxios.post("/api/trips", newTrip)
@@ -72,8 +76,9 @@ export const addTrip = (newTrip) => {
                 // console.log(response.data);
                 dispatch({
                     type: "ADD_TRIP",
-                    newTrip: response.data
+                    newTrip: response.data,
                 })
+                history.push("/groupwall/" + response.data._id)
             })
             .catch(err => {
                 dispatch({

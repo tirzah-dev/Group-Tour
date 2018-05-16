@@ -5,8 +5,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const tripSchema = new Schema({
-
-
+    name: {
+        type: String,
+        required: true
+    },
     city: {
         type: String,
         required: true
@@ -29,10 +31,6 @@ const tripSchema = new Schema({
         required: false
     },
 
-    travelers:{
-        type: Array,
-        required: false
-    },
     activities:[{
         activity: {
             type: Schema.Types.ObjectId,
