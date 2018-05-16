@@ -52,11 +52,29 @@ const travelersReducer = (state = initialState, action) => {
                     [action.key]: action.errCode
                 }
             }
+        case "GET_TRAVELER":
+            return {
+                ...state,
+                loading: false,
+                traveler: action.traveler
+            }
         case "EDIT_TRAVELER":
             return {
                 ...state,
                 loading: false,
-                travelersData: action.editedTraveler
+                travelerData: state.travelerData.map(traveler => {
+                    if (traveler._id === action.id) {
+                        return action.editedTraveler
+                    } else {
+                        return traveler
+                    }
+                })
+            }
+        case "DELETE_TRAVELER":
+            return {
+                ...state,
+                loading: false,
+                travelerData: state.travelerData.filter(traveler => traveler._id !== action.id)
             }
         default: return state;
     }
@@ -127,7 +145,18 @@ export const logout = () => {
         type: "LOGOUT"
     }
 }
-
+//get one Traveler
+// export const getTraveler = id => {
+//     return dispatch => {
+//         axios.get("travelers/" + id)
+//             .then(response => {
+//                 dispatch({
+//                     type: "GET_TRAVELER",
+//                     traveler: response.data
+//                 })
+//             })
+//     }
+// }
 
 //editing a travler // CHECK ROUTES
 export const editTraveler = (editedTraveler, id) => {

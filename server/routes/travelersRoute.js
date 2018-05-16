@@ -36,8 +36,11 @@ travelersRouter.get("/trips/:tripId", (req, res) => {
 });
 //goal: get one traveler not associated with a trip
 //current status: pulls all travelers everywhere
-travelersRouter.get("/:travelerId/", (req, res) => {
-    Traveler.findById({ _id: req.travelerId }, (err, traveler) => {
+travelersRouter.get("/:travelerId", (req, res) => {
+    //include populate here
+    Traveler.findById({ _id: req.params.travelerId })
+        .populate("trips")
+        .exec((err, traveler) => {
         if (err) return res.status(500).send({ success: false, err })
         if (traveler === null) return res.status(400).send({ success: false, err: "Traveler not found!" })
         return res.status(200).send({ success: true, traveler: traveler.withoutPassword() })
