@@ -1,20 +1,39 @@
-import React from 'react';
-import { Switch, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { verify } from "./redux/travelersRedux";
 import Home from "./Home";
 import Login from "./Login";
 import SignUp from './SignUp';
-
-function App() {
-    return (
-        <div>
-            <Switch>
-                <Route path='/' component={Home} />
-                <Route path='/login' component={Login} />
-                <Route path='/signup' component={SignUp} />
+import GroupInfo from './GroupInfo';
+import ProtectedRoute from "./ProtectedRoute";
+import TripDetails from "./TripDetails";
 
 
-            </Switch>
-        </div>
-    )
+class App extends Component {
+    render(props) {
+        const { isAuthenticated, loading } = this.props;
+        return (
+            <div>
+                {loading ?
+                 <div>...Loading user data</div>
+                 :
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/login' render={props => isAuthenticated ?
+                        <Redirect to="/groupinfo" /> :
+                        <Login {...props} />
+                    } />
+                    <Route path='/signup' render={props => isAuthenticated ?
+                        <Redirect to="/groupinfo" /> :
+                        <SignUp {...props} />
+                    } />
+                    <ProtectedRoute path='/groupinfo' component={GroupInfo} />
+              <Route path='/tripdetails' component={TripDetails}/>
+                </Switch>
+                }
+            </div>
+        )
+    }
 }
-export default App;
+export default withRouter(connect(state => state.travelers, { verify })(App));
