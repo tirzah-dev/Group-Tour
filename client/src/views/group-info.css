@@ -1,5 +1,3 @@
-
-
 body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -27,8 +25,16 @@ div {
     text-align: left;
     color: #404040;
     padding: 20px;
-
 }
+
+button {
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    background-color: teal;
+}
+
 
 /* &.txt-center {
 
@@ -124,5 +130,3 @@ div {
         opacity: 1;
     }
 } */
-
-

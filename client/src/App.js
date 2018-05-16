@@ -7,6 +7,8 @@ import Login from "./Login";
 import SignUp from './SignUp';
 import GroupInfo from './GroupInfo';
 import ProtectedRoute from "./ProtectedRoute";
+import TripDetails from "./TripDetails";
+import GroupWall from './GroupWall';
 
 
 class App extends Component {
@@ -28,6 +30,8 @@ class App extends Component {
                         <SignUp {...props} />
                     } />
                     <ProtectedRoute path='/groupinfo' component={GroupInfo} />
+              <Route path='/tripdetails' component={TripDetails}/>
+              <Route path='/groupwall' component={GroupWall}/>
                 </Switch>
                 }
             </div>
