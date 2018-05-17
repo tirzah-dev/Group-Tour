@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
-// import GroupWall from './GroupWall';
+import GroupWall from './GroupWall';
 import {addTrip} from "./redux/tripsRedux";
 
 class TripDetails extends Component {
@@ -66,7 +66,7 @@ class TripDetails extends Component {
                         <br />
                         <br />
                         <div>
-                     <Link to="/groupwall" id="wall-landing">   <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button></Link>
+                        <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button>
                         </div>
                     </form>
                 </div>

@@ -19,7 +19,7 @@ class GroupInfo extends Component {
     console.log(trips);
     const tripList = trips.map(trip => <OneTrip key={trip._id} {...trip} />)
     return (
-      <div>
+      <div classname="group-info-body-page">
         <br />
         <div className="has-animation animation-ltr" data-delay="10">
           <p className="bigger">Your Trips</p>
