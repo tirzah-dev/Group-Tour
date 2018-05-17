@@ -7,10 +7,21 @@
     position: relative;
 }
 
-.login-image {
+.login-page-wrapper {
+    background-image: url("https://handluggageonly.co.uk/wp-content/uploads/2016/03/Positano-Weather.jpg");
     width: 1600px;
     height: 100vh;
 }
+
+
+/* image { */
+
+
+/* width: 1600px;
+    height: 100vh; */
+
+
+/* } */
 
 .login-page-wrapper {
     font-family: 'Montserrat', sans-serif;
@@ -18,8 +29,8 @@
     font-weight: 400;
     color: teal;
     background-color: #f2f2f2;
-    position: relative;
-    z-index: 0;
+    /* position: relative; */
+    /* z-index: 0; */
 }
 
 h1 {
@@ -34,13 +45,13 @@ h1 {
     max-width: 100%;
     padding: 20px;
     background-color: white;
-    opacity: .8;
+    opacity: .82;
     border: solid 1px #d2d2d2;
     box-shadow: 5px 5px 10px #5f5b5b;
-    position: absolute;
-    left: 100px;
-    top: 120px;
-    z-index: 2;
+    /* position: absolute; */
+    margin: 80px;
+    margin-right: 900px;
+    /* z-index: 2; */
 }
 
 .container:hover {
@@ -90,6 +101,7 @@ button {
     color: #fff;
     font-size: 1.4em;
     text-transform: uppercase;
+    opacity: 1;
 }
 
 button:hover {
