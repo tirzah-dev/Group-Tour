@@ -1,0 +1,53 @@
+.profile-card-page {
+    width: 300px;
+    background-color: teal;
+    color: white;
+}
+
+.profile-page-wrapper {
+    max-width: 100%;
+}
+
+.avatar-area {
+    display: inline-block;
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.name-profile-card {
+    font-size: 20px;
+    padding: 10px;
+    float: right;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+.trip-name-profile-card {
+    font-size: 17px;
+}
+
+.start-date-display-profile-card {
+    font-size: 15px;
+}
+
+.trips-list-display {
+    font-size: 18px;
+    text-align: left;
+    color: orangered;
+}
+
+.my-trips-list-title {
+    color: orangered;
+}
+
+.my-trips-list {
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+}

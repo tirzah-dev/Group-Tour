@@ -25,7 +25,9 @@ authRouter.post("/signup", (req, res) => {
 //goal: login with a valid user
 //current: testing
 authRouter.post("/login", (req, res) => {
-    Traveler.findOne({ username: req.body.username.toLowerCase() }, (err, traveler) => {
+    Traveler.findOne({ username: req.body.username.toLowerCase() })
+    .populate("trips")
+    .exec((err, traveler) => {
         if (err) return res.status(500).send(err);
         if (!traveler) {
             return res.status(403).send({ success: false, message: "Invalid username!" })
