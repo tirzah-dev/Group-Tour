@@ -64,7 +64,7 @@ class Login extends Component {
                             </div>
                             <input onChange={this.handleChange} className="user-name" type="text" name="username" placeholder="User Name*" required />
                             <input onChange={this.handleChange} clasName="password-input" type="text" name="password" placeholder="Your password*" required />
-                          <Link to="/groupinfo" id="group-info-link-from-login">  <button type="submit" className="login-button">Log in</button></Link>
+                          <button type="submit" className="login-button">Log in</button>
                             <br />
                         </form>
                     </div>
