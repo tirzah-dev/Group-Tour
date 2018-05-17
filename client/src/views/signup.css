@@ -33,7 +33,7 @@ img {
 
 .signup-container {
     margin: 10px auto;
-    width: 400px;
+    width: 425px;
     max-width: 100%;
     padding: 20px;
     background-color: white;
@@ -49,10 +49,10 @@ img {
     box-shadow: 5px 5px 5px #d2d2d2;
 }
 
-input {
+.signup-input {
     width: 100%;
     padding: 12px;
-    border: solid 1px orangered;
+    border: solid 1px teal;
     margin-top: 10px;
     font-family: inherit;
     font-size: 20px;
@@ -60,7 +60,7 @@ input {
 
 .traveler-name,
 .username-selection-input {
-    width: 49.4%;
+    width: 50%;
     margin-top: -5px;
 }
 

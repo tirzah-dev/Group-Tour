@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import './views/login.css';
 import './assets/travel.gif';
 import { login } from "./redux/travelersRedux"
-// import '../views/login.js';
+
 
 class Login extends Component {
     constructor(props) {

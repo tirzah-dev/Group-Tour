@@ -49,7 +49,7 @@ class TripDetails extends Component {
                 <div className="background-trip-details-page">
                     {/* <img src="http://collaborate.netlify.com/as sets/travel.gif" alt="travel site"/> */}
 
-                    <form className="form" name="registeration-form" id="regForm">
+                    <form className="form" onSubmit={this.handleSubmit} name="registeration-form" id="regForm">
                         <h1 id="reg-form-title">Tell Us About Your Trip</h1>
                         <div className="tab name-info">Destination:
                         <br />
