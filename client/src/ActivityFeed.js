@@ -109,7 +109,7 @@ function ActivityFeed(props) {
                         </figure>
                         <img className="img" alt src='https://www.hawaiidiscount.com/Portals/0/hawaii-adventure-act.jpg' />
                     </article>
-                </section>
+                </section> 
 
 
 

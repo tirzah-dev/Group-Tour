@@ -8,7 +8,7 @@ profileAxios.interceptors.request.use(config => {
 })
 
 const initialState = {
-    loading: false,
+    loading: true,
     username: "",
     isAdmin: false,
     isAuthenticated: false,
@@ -37,6 +37,28 @@ const travelersReducer = (state = initialState, action) => {
                     login: ""
                 },
                 travelerData: action.traveler
+            }
+        case "ADD_TRIP":
+            return {
+                ...state,
+                travelerData: {
+                    ...state.travelerData,
+                    trips: [...state.traveler.trips, action.newTrip]
+                }
+            }
+        case "EDIT_TRIP": 
+            return {
+                ...state,
+                travelerData: {
+                    ...state.travelerData,
+                    trips: state.travelerData.trips.map(trip => {
+                        if (trip._id === action.id){
+                            return action.editedTrip
+                        } else {
+                            return trip
+                        }
+                    })
+                }
             }
         case "LOGOUT":
             return {
@@ -96,11 +118,16 @@ export const authError = (key, errCode) => {
 //double check what the route is in the database /api/????what did we call it???
 export function verify() {
     return dispatch => {
-        profileAxios.get("/api/travelers")
+        profileAxios.get("/api/travelers/verify")
             .then(response => {
-                const { traveler } = response.data;
-                dispatch(authenticate(traveler));
+                dispatch(authenticate(response.data));
+
             })
+            .catch(err => dispatch({
+                type: "AUTH_ERROR",
+                errCode: "verify",
+                err
+            }))
     }
 }
 //double check all routes with backend

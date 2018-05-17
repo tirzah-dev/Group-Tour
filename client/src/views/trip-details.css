@@ -15,8 +15,10 @@
     height: auto;
     z-index: 1;
 } */
-        
-        #regForm {
+        .details-list{
+            color:#000;
+        }
+        .regForm {
             background-color: white;
             opacity: .825;
             margin: 70px auto;
@@ -54,7 +56,7 @@
             opacity: 1;
         }
         
-        #reg-form-title {
+        .reg-form-title {
             color: rgba(255, 68, 0, 0.699);
             font-weight: bolder;
             font-size: 40px;
