@@ -3,9 +3,17 @@
     text-align: center;
 }
 
+.group-info-wrapper {
+    background-image: url("https://www.edreams.com/blog/wp-content/uploads/sites/3/2016/01/venice-feat.jpg");
+    width: 1400px;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
 div {
     display: inline-block;
     text-align: center;
+    position: relative;
 }
 
 .bigger {

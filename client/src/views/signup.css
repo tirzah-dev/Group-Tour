@@ -8,10 +8,7 @@
 } */
 
 .background-signup-page {
-    background-image: url(http://collaborate.netlify.com/assets/travel.gif)
-}
-
-img {
+    background-image: url("https://cdn-images-1.medium.com/max/1899/1*RbBwF9pMlxQm45cVjDch4w.jpeg");
     width: 1600px;
     height: 100vh;
 }

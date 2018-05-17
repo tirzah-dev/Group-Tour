@@ -20,7 +20,7 @@ class GroupInfo extends Component {
     const tripList = trips.map(trip => <OneTrip key={trip._id} {...trip} />)
     return (
       <div classname="group-info-body-page">
-        <br />
+        <div className="group-info-wrapper">
         <div className="has-animation animation-ltr" data-delay="10">
           <p className="bigger">Your Trips</p>
         </div>
@@ -50,12 +50,13 @@ class GroupInfo extends Component {
         <br />
         <br />
         <div className="has-animation animation-rtl" data-delay="2000">
-          <img src="https://handluggageonly.co.uk/wp-content/uploads/2015/01/478470_10151604293251789_334674524_o.jpg" width="600" />
+          {/* <img src="https://handluggageonly.co.uk/wp-content/uploads/2015/01/478470_10151604293251789_334674524_o.jpg" width="600" /> */}
         </div>
         <br />
         <div className="has-animation animation-ltr" data-delay="4000">
           <p className="bigger">Get Started ☺</p>
         </div>
+      </div>
       </div>
     )
   }

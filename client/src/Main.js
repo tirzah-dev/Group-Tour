@@ -4,9 +4,11 @@ import ActivityFeed from "./ActivityFeed";
 
 function Main(props) {
     return (
+   
         <div className="activity-feed-holder">
             <ActivityFeed/>
         </div>
+        
        
     )
 }

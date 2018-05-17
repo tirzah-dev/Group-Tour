@@ -64,7 +64,7 @@ class SignUp extends Component {
         return (
             <div>
                 <div className="background-signup-page">
-                    <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
+                    {/* <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" /> */}
                     <div className="signup-container">
                         <form id="sign-up-form">
                             <div className="signup-header">
