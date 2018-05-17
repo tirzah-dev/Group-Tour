@@ -6,10 +6,11 @@ import Main from './Main';
 import SidebarRight from './SidebarRight';
 
 function GroupWallLayout(props) {
+    const tripId = props.tripId;
     return (
         <div className="group-wall-wrapper">
             <div className="wall-header"> <Header /></div>
-            <div className="left-sidebar"> <SidebarLeft /></div>
+            <div className="left-sidebar"> <SidebarLeft tripId={tripId}/></div>
             <div className="main"><Main /></div>
             <div className="right-sidebar"><SidebarRight /></div>
         </div>

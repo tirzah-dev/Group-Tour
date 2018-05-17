@@ -1,12 +1,14 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function OneTrip (props){
+function OneTrip(props) {
     return (
-        <div>
-            <Link to={`/groupwall/${props._id}`}>Trip Name: {props.name}, City: {props.city}, Country: {props.country} </Link>
+        <li>
+            <Link to={`/groupwall/${props._id}`}>
+                {props.name} - {props.city}
+            </Link>
             {/* <p>{props.country}</p> */}
-        </div>
+        </li>
     )
 }
 export default OneTrip;

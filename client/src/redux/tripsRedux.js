@@ -12,7 +12,6 @@ const initialState = {
     tripsData: [],
     loading: true,
     errMsg: "",
-    // currentTripId: "",
 }
 
 this.state = this.initialState;
@@ -24,7 +23,6 @@ const tripsReducer = (state = initialState, action) => {
                 ...state,
                 loading: false,
                 tripsData: [...state.tripsData, action.newTrip],
-                currentTripId: action.id
             }
         case "EDIT_TRIP":
             return {

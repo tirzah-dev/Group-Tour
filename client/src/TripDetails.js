@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
 // import GroupWall from './GroupWall';
@@ -43,7 +43,7 @@ class TripDetails extends Component {
 
     render(props) {
         const { name, city, country, startDate, endDate } = this.state.inputs;
-        console.log("check for trip on traveler" + this.props)
+        // console.log("check for trip on traveler" + this.props)
         return (
             <div className="trip-details-wrapper">
                 <div className="background-trip-details-page">
