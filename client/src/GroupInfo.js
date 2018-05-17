@@ -19,14 +19,14 @@ class GroupInfo extends Component {
     console.log(trips);
     const tripList = trips.map(trip => <OneTrip key={trip._id} {...trip} />)
     return (
-      <div>
+      <div classname="group-info-body-page">
         <br />
         <div className="has-animation animation-ltr" data-delay="10">
           <p className="bigger">Your Trips</p>
         </div>
 
         <br />
-        <p>this is where a list of trips is created dynamically from data in database</p>
+        
         {tripList}
         <br />
 
@@ -40,7 +40,8 @@ class GroupInfo extends Component {
         <br />
         <div className="has-animation animation-ltr" data-delay="1500">
           <p className="text txt-center">If this is your first time here, click below to create a trip, and invite members to your trips page to collaborate together on planning the perfect group adventure.
-        <Link to='/tripdetails' id='trip_details'> Create New Trip</Link>
+       <br/>
+        <Link to='/tripdetails' id='trip_details'> <button className="create-button">Create New Trip</button></Link>
             <br />
           </p>
           <nav>
