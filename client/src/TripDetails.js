@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
-import GroupWall from './GroupWall';
+// import GroupWall from './GroupWall';
 import {addTrip} from "./redux/tripsRedux";
 
 class TripDetails extends Component {
@@ -49,7 +49,7 @@ class TripDetails extends Component {
                 <div className="background-trip-details-page">
                     {/* <img src="http://collaborate.netlify.com/as sets/travel.gif" alt="travel site"/> */}
 
-                    <form className="form" name="registeration-form" id="regForm">
+                    <form className="form" onSubmit={this.handleSubmit} name="registeration-form" id="regForm">
                         <h1 id="reg-form-title">Tell Us About Your Trip</h1>
                         <div className="tab name-info">Destination:
                         <br />
@@ -66,7 +66,7 @@ class TripDetails extends Component {
                         <br />
                         <br />
                         <div>
-                        <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button>
+                     <Link to="/groupwall" id="wall-landing">   <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button></Link>
                         </div>
                     </form>
                 </div>

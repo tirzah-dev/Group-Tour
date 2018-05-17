@@ -1,6 +1,6 @@
 import React from 'react';
 import './views/profile-card.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function ProfileCard(props) {
@@ -10,7 +10,7 @@ function ProfileCard(props) {
 
             <div className="avatar-area">
             <div className="add-avatar-img">
-                <img href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png"></img></div>
+                <img className="profile-image" href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png"></img></div>
       
       <h2 className="name-profile-card"> John Doe</h2>
       </div>
