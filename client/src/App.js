@@ -9,9 +9,13 @@ import GroupInfo from './GroupInfo';
 import ProtectedRoute from "./ProtectedRoute";
 import TripDetails from "./TripDetails";
 import GroupWall from './GroupWall';
+import EditTripForm from './EditTripForm';
 
 
 class App extends Component {
+    componentDidMount() {
+        this.props.verify();
+    }
     render(props) {
         const { isAuthenticated, loading } = this.props;
         return (
@@ -32,6 +36,7 @@ class App extends Component {
                         <ProtectedRoute path='/groupinfo' component={GroupInfo} />
                         <ProtectedRoute path='/tripdetails' component={TripDetails} />
                         <ProtectedRoute path='/groupwall/:id' component={GroupWall}/>
+                        <ProtectedRoute path='/edit-trip/:id' component={EditTripForm}/>
                     </Switch>
                 }
             </div>

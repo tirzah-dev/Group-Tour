@@ -10,7 +10,7 @@ function ProfileCard(props) {
 
                 <div className="avatar-area">
                     <div className="add-avatar-img">
-                        <img className="profile-image" href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png"></img></div>
+                        <img className="profile-image" href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png" alt=""></img></div>
 
                     <h2 className="name-profile-card"> John Doe</h2>
                 </div>

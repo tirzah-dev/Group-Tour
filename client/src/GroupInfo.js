@@ -15,11 +15,10 @@ class GroupInfo extends Component {
   }
 
   render(props) {
-    const trips = this.props.travelerData.trips
-    console.log(trips);
-    const tripList = trips.map(trip => <OneTrip key={trip._id} {...trip} />)
+    const trips = this.props.travelerData.trips;
+    const tripList = trips.map(trip => <OneTrip key={trip} {...trip} />)
     return (
-      <div classname="group-info-body-page">
+      <div className="group-info-body-page">
         <br />
         <div className="has-animation animation-ltr" data-delay="10">
           <p className="bigger">Your Trips</p>

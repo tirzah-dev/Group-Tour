@@ -3,7 +3,7 @@ const expressJwt = require("express-jwt");
 const travelersRouter = express.Router();
 const Traveler = require("../models/traveler");
 
-const auth = expressJwt({secret: process.env.SECRET});
+const auth = expressJwt({ secret: process.env.SECRET });
 
 travelersRouter.use(auth);
 
@@ -18,6 +18,17 @@ travelersRouter.use(auth);
 // });
 //goal: get all travelers everywhere
 //current status:works
+
+travelersRouter.get("/verify", (req, res) => {
+    Traveler.findOne({ _id: req.user._id })
+        .populate("trips")
+        .exec((err, traveler) => {
+        if (err) return res.status(500).send(err);
+        if (!traveler) return res.status(403).send({ message: "User does not exist!" });
+        res.status(200).send(traveler);
+    })
+})
+
 travelersRouter.get("/", (req, res) => {
     Traveler.find(req.query, (err, travelers) => {
         if (err) return res.status(500).send(err);
@@ -41,10 +52,10 @@ travelersRouter.get("/:travelerId", (req, res) => {
     Traveler.findById({ _id: req.params.travelerId })
         .populate("trips")
         .exec((err, traveler) => {
-        if (err) return res.status(500).send({ success: false, err })
-        if (traveler === null) return res.status(400).send({ success: false, err: "Traveler not found!" })
-        return res.status(200).send({ success: true, traveler: traveler.withoutPassword() })
-    })
+            if (err) return res.status(500).send({ success: false, err })
+            if (traveler === null) return res.status(400).send({ success: false, err: "Traveler not found!" })
+            return res.status(200).send({ success: true, traveler: traveler.withoutPassword() })
+        })
 });
 //goal: edit a traveler
 //current status: working

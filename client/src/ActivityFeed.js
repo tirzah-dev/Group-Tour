@@ -8,14 +8,14 @@ function ActivityFeed(props) {
         <div className="activity-feed-page">
             <div className="activity-feed-wrapper">
                 <div className="activity-feed-title"><h1>Group Activity Feed</h1></div>
-                <section >
+                {/* <section >
                     <article>
                         <figure>
                             <h2>Title</h2>
                             <p>This is a words the users posts which is optional</p>
                             <i class="far fa-star"></i>
                         </figure>
-                        <img alt src='http://www.prideofmaui.com/blog/wp-content/uploads/2014/09/top-10-places-to-visit-in-hawaii-north-shore-oahu-2.jpg' />
+                        <img alt="" src='http://www.prideofmaui.com/blog/wp-content/uploads/2014/09/top-10-places-to-visit-in-hawaii-north-shore-oahu-2.jpg'/>
                     </article>
                     
                     <article>
@@ -108,7 +108,7 @@ function ActivityFeed(props) {
                         </figure>
                         <img alt src='https://www.hawaiidiscount.com/Portals/0/hawaii-adventure-act.jpg' />
                     </article>
-                </section>
+                </section> */}
 
 
 
