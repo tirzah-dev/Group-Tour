@@ -12,7 +12,6 @@ function GroupWallLayout(props) {
             <div className="left-sidebar"> <SidebarLeft /></div>
             <div className="main"><Main /></div>
             <div className="right-sidebar"><SidebarRight /></div>
-
         </div>
     )
 }

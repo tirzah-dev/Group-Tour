@@ -70,7 +70,6 @@ export const getTrips = () =>{
 //add a new trip attach a personId to it
 export const addTrip = (newTrip, history) => {
     return dispatch => {
-        console.log(newTrip);
         tripAxios.post("/api/trips", newTrip)
             .then(response => {
                 // console.log(response.data);

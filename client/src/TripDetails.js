@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
 // import GroupWall from './GroupWall';
-import {addTrip} from "./redux/tripsRedux";
+import { addTrip } from "./redux/tripsRedux";
 
 class TripDetails extends Component {
     constructor(props) {
@@ -22,10 +22,10 @@ class TripDetails extends Component {
         this.state = this.initialState;
     }
     handleChange = (event) => {
-        const {name, value} = event.target;
-        this.setState(prevState =>{
+        const { name, value } = event.target;
+        this.setState(prevState => {
             return {
-                inputs:{
+                inputs: {
                     ...prevState.inputs,
                     [name]: value
                 }
@@ -33,7 +33,7 @@ class TripDetails extends Component {
         })
         console.log(this.state.inputs);
     }
-    handleSubmit = (event) =>{
+    handleSubmit = (event) => {
         event.preventDefault();
         console.log("am I handling the submit")
         this.props.addTrip(this.state.inputs, this.props.history);
@@ -42,7 +42,7 @@ class TripDetails extends Component {
     }
 
     render(props) {
-        const {name, city, country, startDate, endDate} = this.state.inputs;
+        const { name, city, country, startDate, endDate } = this.state.inputs;
         console.log("check for trip on traveler" + this.props)
         return (
             <div className="trip-details-wrapper">
@@ -66,7 +66,7 @@ class TripDetails extends Component {
                         <br />
                         <br />
                         <div>
-                     <Link to="/groupwall" id="wall-landing">   <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button></Link>
+                            <button className="submit" type="submit" id="nextBtn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -74,5 +74,5 @@ class TripDetails extends Component {
         )
     }
 }
-export default connect(state => state, {addTrip})(TripDetails);
+export default connect(state => state, { addTrip })(TripDetails);
 
