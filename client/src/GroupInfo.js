@@ -9,7 +9,7 @@ import OneTrip from "./OneTrip";
 
 class GroupInfo extends Component {
 
-  componentDidMount(){
+  componentDidMount() {
     // console.log(this.props.travelerData._id)
     // this.props.getTraveler(this.props.travelerData._id)
   }
@@ -24,24 +24,20 @@ class GroupInfo extends Component {
         <div className="has-animation animation-ltr" data-delay="10">
           <p className="bigger">Your Trips</p>
         </div>
-
         <br />
-        
-        {tripList}
         <br />
-
         <div className="has-animation animation-rtl" data-delay="1000">
           <p className="text">Just click on a trip below to see details.</p>
           <ul className="text">
-            {/* <li>{array  travelers_current groups in a list style}</li> */}
+            {tripList}
           </ul>
         </div>
         <br />
         <br />
         <div className="has-animation animation-ltr" data-delay="1500">
           <p className="text txt-center">If this is your first time here, click below to create a trip, and invite members to your trips page to collaborate together on planning the perfect group adventure.
-       <br/>
-        <Link to='/tripdetails' id='trip_details'> <button className="create-button">Create New Trip</button></Link>
+       <br />
+            <Link to='/tripdetails' id='trip_details'> <button className="create-button">Create New Trip</button></Link>
             <br />
           </p>
           <nav>

@@ -74,7 +74,7 @@ class SignUp extends Component {
                             <input onChange={this.handleChange} className="username-selection-input" name="username" value={username} type="text" placeholder="User Name*" required="" />
                             <input onChange={this.handleChange} type="text" name="email" value={email} placeholder="Email Address*" required="" />
                             <input onChange={this.handleChange} type="text" name="password" value={password} placeholder="Set a password*" required="" />
-                          <Link to='/groupinfo' id="group-info-link-from-signup">  <button type="submit" onClick={this.handleSubmit} className="sign-up-button">Login</button></Link>
+                          <button type="submit" onClick={this.handleSubmit} className="sign-up-button">Login</button>
                         </form>
                     </div>
                 </div>
