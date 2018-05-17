@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
-import GroupWall from './GroupWall';
-import {addTrip} from "./redux/tripsRedux";
+// import GroupWall from './GroupWall';
+import { addTrip } from "./redux/tripsRedux";
 
 class TripDetails extends Component {
     constructor(props) {
@@ -22,10 +22,10 @@ class TripDetails extends Component {
         this.state = this.initialState;
     }
     handleChange = (event) => {
-        const {name, value} = event.target;
-        this.setState(prevState =>{
+        const { name, value } = event.target;
+        this.setState(prevState => {
             return {
-                inputs:{
+                inputs: {
                     ...prevState.inputs,
                     [name]: value
                 }
@@ -33,7 +33,7 @@ class TripDetails extends Component {
         })
         console.log(this.state.inputs);
     }
-    handleSubmit = (event) =>{
+    handleSubmit = (event) => {
         event.preventDefault();
         console.log("am I handling the submit")
         this.props.addTrip(this.state.inputs, this.props.history);
@@ -42,15 +42,15 @@ class TripDetails extends Component {
     }
 
     render(props) {
-        const {name, city, country, startDate, endDate} = this.state.inputs;
+        const { name, city, country, startDate, endDate } = this.state.inputs;
         console.log("check for trip on traveler" + this.props)
         return (
             <div className="trip-details-wrapper">
                 <div className="background-trip-details-page">
                     {/* <img src="http://collaborate.netlify.com/as sets/travel.gif" alt="travel site"/> */}
 
-                    <form className="form" name="registeration-form" id="regForm">
-                        <h1 id="reg-form-title">Tell Us About Your Trip</h1>
+                    <form className="form" onSubmit={this.handleSubmit} name="registration-form" className="regForm">
+                        <h1 className="reg-form-title">Tell Us About Your Trip</h1>
                         <div className="tab name-info">Destination:
                         <br />
                             <input onChange={this.handleChange} name="name" value={name} placeholder="Name" type="text" />
@@ -66,7 +66,7 @@ class TripDetails extends Component {
                         <br />
                         <br />
                         <div>
-                        <button onClick={this.handleSubmit} className="submit" type="button" id="nextBtn">Submit</button>
+                            <button className="submit" type="submit" id="nextBtn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -74,5 +74,5 @@ class TripDetails extends Component {
         )
     }
 }
-export default connect(state => state, {addTrip})(TripDetails);
+export default connect(state => state, { addTrip })(TripDetails);
 

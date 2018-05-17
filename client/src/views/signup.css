@@ -1,17 +1,14 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     max-width: 100%;
     position: relative;
-}
+} */
 
 .background-signup-page {
-    background-image: url(http://collaborate.netlify.com/assets/travel.gif)
-}
-
-img {
+    background-image: url("https://cdn-images-1.medium.com/max/1899/1*RbBwF9pMlxQm45cVjDch4w.jpeg");
     width: 1600px;
     height: 100vh;
 }
@@ -33,7 +30,7 @@ img {
 
 .signup-container {
     margin: 10px auto;
-    width: 400px;
+    width: 425px;
     max-width: 100%;
     padding: 20px;
     background-color: white;
@@ -49,10 +46,10 @@ img {
     box-shadow: 5px 5px 5px #d2d2d2;
 }
 
-input {
+.signup-input {
     width: 100%;
     padding: 12px;
-    border: solid 1px orangered;
+    border: solid 1px teal;
     margin-top: 10px;
     font-family: inherit;
     font-size: 20px;
@@ -60,7 +57,7 @@ input {
 
 .traveler-name,
 .username-selection-input {
-    width: 49.4%;
+    width: 50%;
     margin-top: -5px;
 }
 

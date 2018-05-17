@@ -70,7 +70,6 @@ export const getTrips = () =>{
 //add a new trip attach a personId to it
 export const addTrip = (newTrip, history) => {
     return dispatch => {
-        console.log(newTrip);
         tripAxios.post("/api/trips", newTrip)
             .then(response => {
                 // console.log(response.data);
@@ -90,7 +89,7 @@ export const addTrip = (newTrip, history) => {
 }
 
 //edit a trip
-export const editTrip = (editedTrip, id) => {
+export const editTrip = (editedTrip, id, history) => {
     return dispatch => {
         tripAxios.put("/api/trips/" + id, editedTrip)
             .then(response => {
@@ -106,6 +105,7 @@ export const editTrip = (editedTrip, id) => {
                     errMsg: "Sorry no data is available"
                 })
             })
+            history.push("/groupinfo")
     }
 }
 

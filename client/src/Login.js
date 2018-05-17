@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import './views/login.css';
 import './assets/travel.gif';
 import { login } from "./redux/travelersRedux"
-// import '../views/login.js';
+
 
 class Login extends Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class Login extends Component {
                     ...prevState.inputs,
                     [name]: value
                 }
-            }  
+            }
         })
         console.log(this.state.inputs);
     }
@@ -51,21 +51,23 @@ class Login extends Component {
             errMsg = "Server error!"
         }
         return (
-            <div className="login-page-wrapper" >
-                <div className="background-auth-page">
-                    <img src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
-                    <div className="container">
-                        <div className="log-in">
-                        </div>
-                        <form onSubmit={this.handleSubmit} id="log-in-form">
-                            <div className="header">
-                                <h1>Welcome back!</h1>
+            <div className="login-page-whole">
+                <div className="login-page-wrapper" >
+                    <div className="background-auth-page">
+                        
+                        <div className="container">
+                            <div className="log-in">
                             </div>
-                            <input onChange={this.handleChange} className="user-name" type="text" name="username" placeholder="User Name*" required />
-                            <input onChange={this.handleChange} type="text" name="password" placeholder="Your password*" required />
-                            <button type="submit" className="login-button">Log in</button>
-                            <br />
-                        </form>
+                            <form onSubmit={this.handleSubmit} id="log-in-form">
+                                <div className="header">
+                                    <h1>Welcome back!</h1>
+                                </div>
+                                <input onChange={this.handleChange} className="user-name" type="text" name="username" placeholder="User Name*" required />
+                                <input onChange={this.handleChange} clasName="password-input" type="text" name="password" placeholder="Your password*" required />
+                                <button type="submit" className="login-button">Log in</button>
+                                <br />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,109 +1,100 @@
-    * {
-        font-family: 'Montserrat', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .trip-details-wrapper {
-        background-image: url("http://avante.biz/wp-content/uploads/Travel-Wallpaper/Travel-Wallpaper-026.jpg");
-        max-width: 100%;
-        width: 1600px;
-        height: 100vh;
-    }
-    
-    img {
-        width: 1400px;
-        height: 100vh;
-        z-index: 0;
-    }
-    /* .trip-details-container {
+        .trip-details-wrapper {
+            background-image: url("http://avante.biz/wp-content/uploads/Travel-Wallpaper/Travel-Wallpaper-026.jpg");
+            max-width: 100%;
+            width: 1600px;
+            height: 100vh;
+        }
+        
+        img {
+            width: 1600px;
+            height: 100vh;
+            z-index: 0;
+        }
+        /* .trip-details-container {
     width: 100%;
     height: auto;
     z-index: 1;
 } */
-    
-    #regForm {
-        background-color: white;
-        opacity: .825;
-        margin: 70px auto;
-        padding: 30px;
-        width: 80%;
-        min-width: 300px;
-        border: 6px rgb(7, 83, 83) solid;
-        box-shadow: 5px 4px rgb(59, 54, 54);
-        height: auto;
-    }
-    /* .background-reg-page {
+        .details-list{
+            color:#000;
+        }
+        .regForm {
+            background-color: white;
+            opacity: .825;
+            margin: 70px auto;
+            padding: 30px;
+            width: 80%;
+            min-width: 300px;
+            border: 6px rgb(7, 83, 83) solid;
+            box-shadow: 5px 4px rgb(59, 54, 54);
+            height: auto;
+        }
+        /* .background-reg-page {
         background-image: url(http://collaborate.netlify.com/assets/travel2.gif);
     } */
-    
-    input {
-        padding: 10px;
-        width: 400px;
-        font-size: 20px;
-        font-family: Raleway;
-        border: 2px solid teal;
-        color: black;
-    }
-    
-    .step {
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        border: none;
-        border-radius: 50%;
-        display: inline-block;
-        opacity: 0.5;
-    }
-    
-    .step.active {
-        opacity: 1;
-    }
-    
-    #reg-form-title {
-        color: rgba(255, 68, 0, 0.699);
-        font-weight: bolder;
-        font-size: 40px;
-    }
-    
-    .hint {
-        color: darkmagenta;
-    }
-    
-    button {
-        background-color: teal;
-        width: 170px;
-        height: 50px;
-        color: white;
-        font-size: 20px;
-        text-align: center;
-        padding: 5px;
-    }
-    
-    #prevBtn {
-        background-color: tomato;
-        color: white;
-        width: 170px;
-        font-size: 20px;
-        height: 50px;
-    }
-    
+        
+        input {
+            padding: 10px;
+            width: 400px;
+            font-size: 20px;
+            font-family: Raleway;
+            border: 2px solid teal;
+            color: black;
+        }
+        
+        .step {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+        }
+        
+        .step.active {
+            opacity: 1;
+        }
+        
+        .reg-form-title {
+            color: rgba(255, 68, 0, 0.699);
+            font-weight: bolder;
+            font-size: 40px;
+        }
+        
+        .hint {
+            color: darkmagenta;
+        }
+        
+        button {
+            background-color: teal;
+            width: 170px;
+            height: 50px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        #prevBtn {
+            background-color: tomato;
+            color: white;
+            width: 170px;
+            font-size: 20px;
+            height: 50px;
+        }
+        /*     
     #teal {
         background-color: teal;
     }
     
-    #orange-red {
-        background-color: orangered;
-    }
     
-    #dark-blue {
-        background-color: darkblue;
-    }
-    
-    #dark-green {
-        background-color: green;
-    }
-    
-    #dark-magenta {
-        background-color: darkmagenta;
-    }
+                    #dark-blue {
+            background-color: darkblue;
+        }
+        #dark-green {
+            background-color: green;
+        }
+        #dark-magenta {
+            background-color: darkmagenta;
+        } */
