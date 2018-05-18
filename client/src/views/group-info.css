@@ -5,7 +5,8 @@
 
 .group-info-wrapper {
     background-image: url("https://www.edreams.com/blog/wp-content/uploads/sites/3/2016/01/venice-feat.jpg");
-    width: 1400px;
+    background-size: cover;
+    width: 1800px;
     max-width: 100%;
     min-height: 100vh;
 }
@@ -22,7 +23,7 @@ div {
     font-weight: 800;
     padding: 20px;
     text-transform: uppercase;
-    color: black;
+    color: teal;
     display: inline-block;
     position: relative;
 }
@@ -35,6 +36,8 @@ div {
     color: #404040;
     padding: 20px;
     text-align: center;
+    font-size: 20px;
+    color: orangered;
 }
 
 button {

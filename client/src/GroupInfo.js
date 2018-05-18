@@ -53,7 +53,7 @@ class GroupInfo extends Component {
         </div>
         <br />
         <div className="has-animation animation-ltr" data-delay="4000">
-          <p className="bigger">Get Started ☺</p>
+          
         </div>
       </div>
       </div>
