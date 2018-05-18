@@ -6,9 +6,9 @@ import { getTrip } from "./redux/tripsRedux";
 
 class GroupWall extends Component {
     componentDidMount() {
-        this.props.getTrip(this.props.match.params.id);
     }
     render() {
+        console.log("props", this.props)
         console.log(this.props.match.params.id);
         return (
             <div className="group-wall-page" >
@@ -20,4 +20,4 @@ class GroupWall extends Component {
     }
 }
 
-export default connect(null, { getTrip })(GroupWall);
+export default connect(state => state.travelers, { getTrip })(GroupWall);

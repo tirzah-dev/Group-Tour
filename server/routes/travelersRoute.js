@@ -7,17 +7,6 @@ const auth = expressJwt({ secret: process.env.SECRET });
 
 travelersRouter.use(auth);
 
-//goal: create a traveler at registration
-//current: works
-// travelersRouter.post("/", (req, res) => {
-//     const traveler = new Traveler(req.body);
-//     traveler.save(function (err, newTraveler) {
-//         if (err) return res.status(500).send(err);
-//         return res.status(201).send(newTraveler);
-//     });
-// });
-//goal: get all travelers everywhere
-//current status:works
 
 travelersRouter.get("/verify", (req, res) => {
     Traveler.findOne({ _id: req.user._id })
@@ -48,7 +37,7 @@ travelersRouter.get("/trips/:tripId", (req, res) => {
 //goal: get one traveler not associated with a trip
 //current status: pulls all travelers everywhere
 travelersRouter.get("/:travelerId", (req, res) => {
-    //include populate here
+    //include populate here?
     Traveler.findById({ _id: req.params.travelerId })
         .populate("trips")
         .exec((err, traveler) => {
