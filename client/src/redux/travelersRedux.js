@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { addTrip } from './tripsRedux.js';//does this help????
 
 const profileAxios = axios.create();
 profileAxios.interceptors.request.use(config => {
@@ -18,7 +17,7 @@ const initialState = {
         login: ""
     },
     travelerData: {},
-    errMsg: ""
+    errMsg: "",
 }
 
 const travelersReducer = (state = initialState, action) => {
@@ -41,12 +40,12 @@ const travelersReducer = (state = initialState, action) => {
             }
         case "ADD_TRIP":
             return {
-               ...state,
-               loading: false,
-               travelerData: {
-                   ...state.travelerData,
-                   trips: [...state.travelerData.trips, action.newTrip]
-               }
+                ...state,
+                loading: false,
+                travelerData: {
+                    ...state.travelerData,
+                    trips: [...state.travelerData.trips, action.newTrip]
+                }
             }
         case "EDIT_TRIP": 
             return {
@@ -75,12 +74,6 @@ const travelersReducer = (state = initialState, action) => {
                     ...state.authErrCode,
                     [action.key]: action.errCode
                 }
-            }
-        case "GET_TRAVELER":
-            return {
-                ...state,
-                loading: false,
-                traveler: action.traveler
             }
         case "EDIT_TRAVELER":
             return {
@@ -117,7 +110,6 @@ export const authError = (key, errCode) => {
     }
 }
 
-//double check what the route is in the database /api/????what did we call it???
 export function verify() {
     return dispatch => {
         profileAxios.get("/api/travelers/verify")
@@ -132,7 +124,6 @@ export function verify() {
             }))
     }
 }
-//double check all routes with backend
 export const signup = (userInfo) => {
     return dispatch => {
         dispatch({
@@ -151,7 +142,6 @@ export const signup = (userInfo) => {
     }
 }
 
-//double check all routes with backend
 export const login = credentials => {
     return dispatch => {
         axios.post("/auth/login", credentials)
@@ -175,19 +165,23 @@ export const logout = () => {
     }
 }
 //get one Traveler
-// export const getTraveler = id => {
-//     return dispatch => {
-//         axios.get("travelers/" + id)
-//             .then(response => {
-//                 dispatch({
-//                     type: "GET_TRAVELER",
-//                     traveler: response.data
-//                 })
-//             })
-//     }
-// }
+export const getTraveler = id => {
+    console.log("am i here?")
+    return dispatch => {
+        axios.get("/api/travelers/" + id)
+            .then(response => {
+                const { token, traveler } = response.data;
+                localStorage.setItem("token", token);
+                localStorage.setItem("traveler", JSON.stringify(traveler));
+                dispatch({
+                    type: "GET_TRAVELER",
+                    traveler: response.data
+                })
+            })
+    }
+}
 
-//editing a travler // CHECK ROUTES
+//editing a travler 
 export const editTraveler = (editedTraveler, id) => {
     return dispatch => {
         axios.put("/travelers/" + id, editedTraveler)
@@ -200,7 +194,7 @@ export const editTraveler = (editedTraveler, id) => {
     }
 }
 
-//delete a traveler //CHECK ROUTES
+//delete a traveler
 export const deleteTraveler = id => {
     return dispatch => {
         axios.delete("/travelers/" + id)
