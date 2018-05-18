@@ -116,7 +116,7 @@ button::-moz-focus-inner {
 
 /*! CSS Used from: http://collaborate.netlify.com/main.css */
 
-body {
+.main-body {
     overflow-x: hidden;
 }
 
@@ -143,6 +143,8 @@ ul {
 
 header {
     min-height: 100vh;
+    width: 1600px;
+    max-width: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent), url(https://images.unsplash.com/photo-1502920514313-52581002a659?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fc8be37d913994b3540169a890e2242d&auto=format&fit=crop&w=1647&q=80)no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
@@ -316,6 +318,7 @@ nav div.show {
     margin-bottom: 40px;
     margin-top: 30px;
     color: #4d4d4d;
+    line-height: 3.5em;
 }
 
 .center-text h2 {

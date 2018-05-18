@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-// import { Link } from 'react-router-dom';
 import './views/trip-details.css';
 
-// import GroupWall from './GroupWall';
 import { addTrip } from "./redux/tripsRedux";
 
 class TripDetails extends Component {
@@ -16,7 +14,6 @@ class TripDetails extends Component {
                 country: "",
                 startDate: "",
                 endDate: "",
-                // travelers: this.props.travelers.travelerData._id
             },
         }
         this.state = this.initialState;
@@ -35,7 +32,7 @@ class TripDetails extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log("am I handling the submit")
+        console.log("am I handling the submit");
         this.props.addTrip(this.state.inputs, this.props.history);
         this.setState(this.initialState)
 
@@ -43,14 +40,13 @@ class TripDetails extends Component {
 
     render(props) {
         const { name, city, country, startDate, endDate } = this.state.inputs;
-        // console.log("check for trip on traveler" + this.props)
         return (
             <div className="trip-details-wrapper">
                 <div className="background-trip-details-page">
                     {/* <img src="http://collaborate.netlify.com/as sets/travel.gif" alt="travel site"/> */}
 
-                    <form className="form" onSubmit={this.handleSubmit} name="registeration-form" id="regForm">
-                        <h1 id="reg-form-title">Tell Us About Your Trip</h1>
+                    <form className="form" onSubmit={this.handleSubmit} name="registration-form" className="regForm">
+                        <h1 className="reg-form-title">Tell Us About Your Trip</h1>
                         <div className="tab name-info">Destination:
                         <br />
                             <input onChange={this.handleChange} name="name" value={name} placeholder="Name" type="text" />

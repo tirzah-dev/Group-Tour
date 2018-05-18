@@ -1,9 +1,8 @@
 import axios from "axios";
-import {editTraveler} from "./travelersRedux";
 
 const tripAxios = axios.create();
 
-tripAxios.interceptors.request.use(config =>{
+tripAxios.interceptors.request.use(config => {
     const token = localStorage.getItem("token");
     config.headers.Authorization = `Bearer ${token}`;
     return config;
@@ -18,24 +17,13 @@ this.state = this.initialState;
 
 const tripsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD_TRIP":
+        case "GET_TRIP":
             return {
                 ...state,
                 loading: false,
-                tripsData: [...state.tripsData, action.newTrip],
+                tripsData: action.oneTrip,
             }
-        case "EDIT_TRIP":
-            return {
-                ...state,
-                loading: false,
-                tripsData: state.tripsData.map(trip => {
-                    if (trip._id === action.id) {
-                        return action.editedTrip
-                    } else {
-                        return trip
-                    }
-                })
-            }
+
         case "DELETE_TRIP":
             return {
                 ...state,
@@ -47,21 +35,38 @@ const tripsReducer = (state = initialState, action) => {
     }
 }
 //CHECK ROUTES!!!!!!
-export const getTrips = () =>{
+export const getTrips = () => {
     return dispatch => {
         tripAxios.get("/api/trips")
-        .then(response => {
-            dispatch({
-                type: "GET_TRIPS",
-                tripsData: response.data
+            .then(response => {
+                dispatch({
+                    type: "GET_TRIPS",
+                    tripsData: response.data
+                })
             })
-        })
-        .catch(err => {
-            dispatch({
-                type:"ERR_MSG",
-                errMsg: "Sorry no data is available"
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Sorry no data is available"
+                })
             })
-        })
+    }
+}
+export const getTrip = id => {
+    return dispatch => {
+        tripAxios.get("/api/trips/" + id)
+            .then(response => {
+                dispatch({
+                    type: "GET_TRIP",
+                    oneTrip: response.data
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: "ERR_MSG",
+                    errMsg: "Sorry no data is available"
+                })
+            })
     }
 }
 
@@ -70,7 +75,7 @@ export const addTrip = (newTrip, history) => {
     return dispatch => {
         tripAxios.post("/api/trips", newTrip)
             .then(response => {
-                // console.log(response.data);
+                console.log(response.data);
                 dispatch({
                     type: "ADD_TRIP",
                     newTrip: response.data,
@@ -79,7 +84,7 @@ export const addTrip = (newTrip, history) => {
             })
             .catch(err => {
                 dispatch({
-                    type:"ERR_MSG",
+                    type: "ERR_MSG",
                     errMsg: "Sorry no data is available"
                 })
             })
@@ -87,7 +92,7 @@ export const addTrip = (newTrip, history) => {
 }
 
 //edit a trip
-export const editTrip = (editedTrip, id) => {
+export const editTrip = (editedTrip, id, history) => {
     return dispatch => {
         tripAxios.put("/api/trips/" + id, editedTrip)
             .then(response => {
@@ -96,13 +101,15 @@ export const editTrip = (editedTrip, id) => {
                     editedTrip: response.data,
                     id
                 })
+                history.push("/groupwall/" + response.data._id)
             })
             .catch(err => {
                 dispatch({
-                    type:"ERR_MSG",
+                    type: "ERR_MSG",
                     errMsg: "Sorry no data is available"
                 })
             })
+
     }
 }
 
@@ -118,7 +125,7 @@ export const deleteTrip = id => {
             })
             .catch(err => {
                 dispatch({
-                    type:"ERR_MSG",
+                    type: "ERR_MSG",
                     errMsg: "Sorry no data is available"
                 })
             })

@@ -5,7 +5,7 @@ import "./views/main.css";
 function Home(props) {
     return (
         <div className="landing-page-wrapper">
-
+<div className="main-body">
             <header>
                 <nav>
                     <button className="nav-button fa fa-bars"> </button>
@@ -93,6 +93,7 @@ function Home(props) {
 
             </footer>
 
+        </div>
         </div>
 
     )

@@ -54,7 +54,7 @@ class Login extends Component {
             <div className="login-page-whole">
                 <div className="login-page-wrapper" >
                     <div className="background-auth-page">
-                        <img className="login-image" src="http://collaborate.netlify.com/assets/travel.gif" alt="travel site" />
+                        
                         <div className="container">
                             <div className="log-in">
                             </div>
