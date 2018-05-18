@@ -1,20 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import { connect } from 'react-redux';
 import moment from 'moment';
 
-function OneTrip(props) {
-    console.log(props._id);
+const OneTrip = (props) => {
+    console.log("PROPS:", props);
+    
     return (
-        <li>
-            <Link to={`/groupwall/${props._id}`}> <p> Trip Name: {props.name} </p> <p> City: {props.city}</p> <p> Country: {props.country}</p></Link>
-            <footer>
-            <Link to={`/edit-trip/${props._id}`}  className="editLink">Edit Trip</Link>
-            </footer>
-        </li>
+        <div>
+            <Link to={`/groupwall/${props._id}`}><h2>Trip Name: {props.name}</h2> <h2>Destination: {props.city}, {props.country}</h2> {/* <h3>Travel Dates: {moment.utc(props.startDate).format('MMM Do')} - {moment.utc(props.endDate).format('MMM Do YYYY')}</h3> */}
+                    {/* Travel Dates: {moment.utc(props.startDate).format('MMM Do')} - {moment.utc(props.endDate).format('MMM Do YYYY' */}
+            </Link>
+        </div>
     )
 }
 export default OneTrip;
 
- {/* Travel Dates: {moment.utc(props.startDate).format('MMM Do')} - {moment.utc(props.endDate).format('MMM Do YYYY' */}
+
 

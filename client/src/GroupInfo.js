@@ -26,7 +26,7 @@ class GroupInfo extends Component {
         <br />
         <br />
         <div className="has-animation animation-rtl" data-delay="1000">
-          <p className="text">Just click on a trip below to see details.</p>
+          <p className="text">Just click on a trip to see details.</p>
           <ul className="text">
             {tripList}
           </ul>

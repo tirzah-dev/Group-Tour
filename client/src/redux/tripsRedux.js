@@ -34,7 +34,6 @@ const tripsReducer = (state = initialState, action) => {
             return state
     }
 }
-//CHECK ROUTES!!!!!!
 export const getTrips = () => {
     return dispatch => {
         tripAxios.get("/api/trips")

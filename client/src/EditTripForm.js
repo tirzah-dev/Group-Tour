@@ -37,7 +37,6 @@ class EditTripForm extends Component {
                     loading: false
                 })
             });
-
     }
 
     handleTripChange = (event) => {
@@ -87,7 +86,8 @@ class EditTripForm extends Component {
                         <br />
                         <div>
                             <button className="submit" type="submit" id="nextBtn">Save Edits</button>
-                            <Link to="/groupWall" className="submit">Cancel</Link>
+                            <Link to="/groupinfo" className="submit"><button className="submit">Cancel</button></Link> 
+                            {/* how can I add the ID here to link balc to the editedTrip */}
                         </div>
                     </form>
                 </div>

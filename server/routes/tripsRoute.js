@@ -20,8 +20,7 @@ tripsRouter.get("/:tripId/travelers", (req, res) => {
     });
 });
 //goal: get all trips associated with a specific traveler
-//current status: returns all trips everywhere
-// Do we loop through on the front end? so we don't need this route targeted at just pulling travelers. OR does this have something to do with authorization...?
+//current status: works
 tripsRouter.get("/travelers/:travelerId", (req, res) => {
     Trip.find({ travelerId: req.params.travelerId }, (err, trips) => {
         if (err) return res.status(500).send(err);

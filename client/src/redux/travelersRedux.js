@@ -75,12 +75,6 @@ const travelersReducer = (state = initialState, action) => {
                     [action.key]: action.errCode
                 }
             }
-        // case "GET_TRAVELER":
-        //     return {
-        //         ...state,
-        //         loading: false,
-        //         traveler: action.traveler
-        //     }
         case "EDIT_TRAVELER":
             return {
                 ...state,
@@ -116,7 +110,6 @@ export const authError = (key, errCode) => {
     }
 }
 
-//double check what the route is in the database /api/????what did we call it???
 export function verify() {
     return dispatch => {
         profileAxios.get("/api/travelers/verify")
@@ -131,7 +124,6 @@ export function verify() {
             }))
     }
 }
-//double check all routes with backend
 export const signup = (userInfo) => {
     return dispatch => {
         dispatch({
@@ -150,7 +142,6 @@ export const signup = (userInfo) => {
     }
 }
 
-//double check all routes with backend
 export const login = credentials => {
     return dispatch => {
         axios.post("/auth/login", credentials)
@@ -190,7 +181,7 @@ export const getTraveler = id => {
     }
 }
 
-//editing a travler // CHECK ROUTES
+//editing a travler 
 export const editTraveler = (editedTraveler, id) => {
     return dispatch => {
         axios.put("/travelers/" + id, editedTraveler)
@@ -203,7 +194,7 @@ export const editTraveler = (editedTraveler, id) => {
     }
 }
 
-//delete a traveler //CHECK ROUTES
+//delete a traveler
 export const deleteTraveler = id => {
     return dispatch => {
         axios.delete("/travelers/" + id)
