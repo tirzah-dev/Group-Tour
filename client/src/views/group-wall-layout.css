@@ -8,8 +8,6 @@
 }
 
 .right-sidebar {
-    background-color: blue;
-    width: 1%;
     position: absolute;
     right: 0px;
     top: 300px;
