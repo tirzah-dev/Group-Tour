@@ -1,5 +1,5 @@
 import axios from "axios";
-import {editTraveler} from "./travelersRedux";
+import { editTraveler } from "./travelersRedux";
 
 const tripAxios = axios.create();
 
@@ -12,32 +12,19 @@ const initialState = {
     tripsData: [],
     loading: true,
     errMsg: "",
-    // currentTripId: "",
 }
 
 this.state = this.initialState;
 
 const tripsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD_TRIP":
-            return {
-                ...state,
-                loading: false,
-                tripsData: [...state.tripsData, action.newTrip],
-                currentTripId: action.id
-            }
-        case "EDIT_TRIP":
-            return {
-                ...state,
-                loading: false,
-                tripsData: state.tripsData.map(trip => {
-                    if (trip._id === action.id) {
-                        return action.editedTrip
-                    } else {
-                        return trip
-                    }
-                })
-            }
+        // case "ADD_TRIP":
+        //     return {
+        //         ...state,
+        //         loading: false,
+        //         tripsData: [...state.tripsData, action.newTrip],
+        //          currentTripId: action.id
+        //     }
         case "DELETE_TRIP":
             return {
                 ...state,

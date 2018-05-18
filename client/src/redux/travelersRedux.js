@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { addTrip } from './tripsRedux.js';//does this help????
 
 const profileAxios = axios.create();
 profileAxios.interceptors.request.use(config => {
@@ -40,11 +41,12 @@ const travelersReducer = (state = initialState, action) => {
             }
         case "ADD_TRIP":
             return {
-                ...state,
-                travelerData: {
-                    ...state.travelerData,
-                    trips: [...state.traveler.trips, action.newTrip]
-                }
+               ...state,
+               loading: false,
+               travelerData: {
+                   ...state.travelerData,
+                   trips: [...state.travelerData.trips, action.newTrip]
+               }
             }
         case "EDIT_TRIP": 
             return {

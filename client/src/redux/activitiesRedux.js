@@ -130,7 +130,7 @@ const editActivities = (editedActivity, id) => {
 }
 
 //delete activity
-const delelteActivity = id => {
+const deleteActivity = id => {
     return dispatch => {
         activityAxios.delete("/activities/" + id)
             .then(response => {
