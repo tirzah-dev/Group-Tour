@@ -17,15 +17,9 @@ class ProfileCard extends Component {
             <div className="profile-card-page">
                 <div className="profile-page-wrapper">
 
-<<<<<<< HEAD
                     <div className="avatar-area">
                         <div className="add-avatar-img">
                             <img className="profile-image" href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png"></img></div>
-=======
-                <div className="avatar-area">
-                    <div className="add-avatar-img">
-                        <img className="profile-image" href="https://cdn1.iconfinder.com/data/icons/ui-5/502/user-256.png" alt=""></img></div>
->>>>>>> master
 
                         <h2 className="name-profile-card">Name</h2>
                     </div>
@@ -42,7 +36,16 @@ class ProfileCard extends Component {
                         </ul>
                     </div>
                 </div>
+                <div className="button-section">
+                    <button className="edit-btn" name="edit">Edit</button>
+                    <button className="delete-btn" name="delete">Delete</button>
+                    </div>
             </div>
+<<<<<<< HEAD
+=======
+        
+        </div>
+>>>>>>> master
 
         )
     }

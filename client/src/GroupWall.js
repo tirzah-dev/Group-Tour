@@ -6,7 +6,7 @@ import { getTrip } from "./redux/tripsRedux";
 
 class GroupWall extends Component {
     componentDidMount() {
-        this.props.getTrip(this.props.match.params.id)
+        this.props.getTrip(this.props.match.params.id);
     }
     render() {
         console.log(this.props.match.params.id);

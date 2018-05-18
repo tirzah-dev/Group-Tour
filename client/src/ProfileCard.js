@@ -8,7 +8,7 @@ import {getTraveler} from "./redux/travelersRedux";
 class ProfileCard extends Component {
     componentDidMount(){
         console.log(this.props.travelerData._id);
-        this.props.getTraveler(this.props.travelerData._id);
+        // this.props.getTraveler(this.props.travelerData._id);
     }
     render(props) {
         const { name, trips } = this.props.travelerData;

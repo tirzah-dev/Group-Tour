@@ -175,8 +175,9 @@ export const logout = () => {
 }
 //get one Traveler
 export const getTraveler = id => {
+    console.log("am i here?")
     return dispatch => {
-        axios.get("/travelers/" + id)
+        axios.get("/api/travelers/" + id)
             .then(response => {
                 const { token, traveler } = response.data;
                 localStorage.setItem("token", token);

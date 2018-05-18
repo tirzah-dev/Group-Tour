@@ -56,6 +56,7 @@ export const getTrip = id => {
     return dispatch => {
         tripAxios.get("/api/trips/" + id)
             .then(response => {
+                console.log(response.data);
                 dispatch({
                     type: "GET_TRIP",
                     oneTrip: response.data
