@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./views/signup.css";
 import { signup } from "./redux/travelersRedux";
 import { connect } from "react-redux"

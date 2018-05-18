@@ -8,7 +8,7 @@ import {getTraveler} from "./redux/travelersRedux";
 class ProfileCard extends Component {
     componentDidMount(){
         console.log(this.props.travelerData._id);
-        // this.props.getTraveler(this.props.travelerData._id);
+        this.props.getTraveler(this.props.travelerData._id);
     }
     render(props) {
         const { name, trips } = this.props.travelerData;
@@ -36,7 +36,16 @@ class ProfileCard extends Component {
                         </ul>
                     </div>
                 </div>
+                <div className="button-section">
+                    <button className="edit-btn" name="edit">Edit</button>
+                    <button className="delete-btn" name="delete">Delete</button>
+                    </div>
             </div>
+<<<<<<< HEAD
+=======
+        
+        </div>
+>>>>>>> master
 
         )
     }

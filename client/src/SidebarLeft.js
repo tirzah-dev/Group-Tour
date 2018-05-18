@@ -2,9 +2,10 @@ import React from 'react'
 import ProfileCard from './ProfileCard';
 
 function SidebarLeft(props) {
+    const tripId = props.tripId;
     return (
         <div>
-          <ProfileCard/>
+          <ProfileCard tripId={tripId} />
         </div>
     )
 }

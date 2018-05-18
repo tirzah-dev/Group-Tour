@@ -17,7 +17,7 @@ const initialState = {
         login: ""
     },
     travelerData: {},
-    errMsg: ""
+    errMsg: "",
 }
 
 const travelersReducer = (state = initialState, action) => {
@@ -41,9 +41,10 @@ const travelersReducer = (state = initialState, action) => {
         case "ADD_TRIP":
             return {
                 ...state,
+                loading: false,
                 travelerData: {
                     ...state.travelerData,
-                    trips: [...state.traveler.trips, action.newTrip]
+                    trips: [...state.travelerData.trips, action.newTrip]
                 }
             }
         case "EDIT_TRIP": 
@@ -74,12 +75,12 @@ const travelersReducer = (state = initialState, action) => {
                     [action.key]: action.errCode
                 }
             }
-        case "GET_TRAVELER":
-            return {
-                ...state,
-                loading: false,
-                traveler: action.traveler
-            }
+        // case "GET_TRAVELER":
+        //     return {
+        //         ...state,
+        //         loading: false,
+        //         traveler: action.traveler
+        //     }
         case "EDIT_TRAVELER":
             return {
                 ...state,
@@ -173,17 +174,21 @@ export const logout = () => {
     }
 }
 //get one Traveler
-// export const getTraveler = id => {
-//     return dispatch => {
-//         axios.get("travelers/" + id)
-//             .then(response => {
-//                 dispatch({
-//                     type: "GET_TRAVELER",
-//                     traveler: response.data
-//                 })
-//             })
-//     }
-// }
+export const getTraveler = id => {
+    console.log("am i here?")
+    return dispatch => {
+        axios.get("/api/travelers/" + id)
+            .then(response => {
+                const { token, traveler } = response.data;
+                localStorage.setItem("token", token);
+                localStorage.setItem("traveler", JSON.stringify(traveler));
+                dispatch({
+                    type: "GET_TRAVELER",
+                    traveler: response.data
+                })
+            })
+    }
+}
 
 //editing a travler // CHECK ROUTES
 export const editTraveler = (editedTraveler, id) => {
