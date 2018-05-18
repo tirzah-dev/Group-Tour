@@ -7,14 +7,6 @@
     min-height: 100%;
 }
 
-.right-sidebar {
-    background-color: blue;
-    width: 1%;
-    position: absolute;
-    right: 0px;
-    top: 300px;
-}
-
 .left-sidebar {
     width: 10%;
     position: absolute;
