@@ -26,7 +26,12 @@ function ProfileCard(props) {
                         <li>trip list</li>
                     </ul>
                 </div>
+                <div className="button-section">
+                    <button className="edit-btn" name="edit">Edit</button>
+                    <button className="delete-btn" name="delete">Delete</button>
+                    </div>
             </div>
+        
         </div>
 
     )
