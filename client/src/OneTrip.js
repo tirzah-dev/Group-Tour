@@ -7,13 +7,12 @@ const OneTrip = (props) => {
     
     return (
         <div>
-            <Link to={`/groupwall/${props._id}`}><h2>Trip Name: {props.name}</h2> <h2>Destination: {props.city}, {props.country}</h2> {/* <h3>Travel Dates: {moment.utc(props.startDate).format('MMM Do')} - {moment.utc(props.endDate).format('MMM Do YYYY')}</h3> */}
-                    {/* Travel Dates: {moment.utc(props.startDate).format('MMM Do')} - {moment.utc(props.endDate).format('MMM Do YYYY' */}
-            </Link>
+            <Link to={`/groupwall/${props._id}`}><h2>Trip Name: {props.name}</h2> <h2>Destination: {props.city}, {props.country}</h2> Departure Date: {moment.utc(props.startDate).format('MMM Do')}</Link>
+            <br />
+            <br />
         </div>
     )
 }
 export default OneTrip;
-
 
 

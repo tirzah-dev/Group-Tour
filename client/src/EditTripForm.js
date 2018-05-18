@@ -80,7 +80,7 @@ class EditTripForm extends Component {
                             <br />
                             <input onChange={this.handleTripChange} name="startDate" value={this.state.inputs.startDate} type="text" />
                             <br />
-                            <input onChange={this.handleChange} name="endDate" value={this.state.inputs.endDate} type="text" />
+                            {/* <input onChange={this.handleChange} name="endDate" value={this.state.inputs.endDate} type="text" /> */}
                         </div>
                         <br />
                         <br />

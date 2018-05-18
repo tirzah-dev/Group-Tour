@@ -13,7 +13,7 @@ function Home(props) {
                         <ul>
                             <ul>
                                 <button className="exit-menu fa fa-times"> </button>
-                                <li> <Link to="/" id="home" className="active">welcome</Link></li>
+                                {/* <li> <Link to="/" id="home" className="active">welcome</Link></li> */}
                                 <li> <Link to="/login" id="login"> sign in</Link> </li>
                                 <li> <Link to="/signup" id="signup"> sign up</Link> </li>
                                 {/* <Link to="" id=""><li> contact</li></Link>  */}
@@ -57,7 +57,7 @@ function Home(props) {
         </div>   */}
 
                 <div className="center-text">
-                    <h1> <span className="custom-font alex-brush"> Plan the perfect </span><br />ITENAIRY </h1>
+                    <h1> <span className="custom-font alex-brush"> Plan the perfect </span><br />ITINERARY </h1>
                     <h2> * </h2>
                     <p> Once you've created a group, you and your travel buddies can plan the perfect vacation. Together you can research awesome new places to explore, post pictures, and finalize your dream iternairy.</p>
                 </div>
@@ -72,7 +72,7 @@ function Home(props) {
                 <div className="center-text add-padding">
                     <h1> <span className="custom-font alex-brush">Share</span><br /></h1>
                     <h2> * </h2>
-                    <p> Share ideas, places you'd like to go visit, deals, pretty much anything with collaborate. </p>
+                    <p> Share ideas, places you'd like to go visit, deals, pretty much anything with Collaborate. </p>
 
                     <h4 className="link">  <Link to="login" id="second-login-link">Join Now</Link></h4>
 

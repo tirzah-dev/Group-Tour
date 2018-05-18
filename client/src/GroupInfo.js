@@ -34,7 +34,7 @@ class GroupInfo extends Component {
         <br />
         <br />
         <div className="has-animation animation-ltr" data-delay="1500">
-          <p className="text txt-center">If this is your first time here, click below to create a trip, and invite members to your trips page to collaborate together on planning the perfect group adventure.
+          <p className="text txt-center">Click below to create a trip and invite people to your trips page to collaborate on the perfect group adventure.
        <br />
             <Link to='/tripdetails' id='trip_details'> <button className="create-button">Create New Trip</button></Link>
             <br />
